@@ -1,0 +1,676 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2566">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
+  </style>
+</head>
+<body>
+<p class="p1">&lt;!DOCTYPE html&gt;</p>
+<p class="p1">&lt;html lang="zh-Hant"&gt;</p>
+<p class="p1">&lt;head&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;meta charset="UTF-TF-8"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;title&gt;劍橋遊學行前說明會：EC 語言學校學生指南&lt;/title&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;script src="https://cdn.tailwindcss.com"&gt;&lt;/script&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;script src="https://cdnjs.cloudflare.com/ajax/libs/framer-motion/10.16.4/framer-motion.umd.min.js"&gt;&lt;/script&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;script src="https://cdn.jsdelivr.net/npm/chart.js"&gt;&lt;/script&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700;900&amp;family=Roboto:wght@300;400;700&amp;display=swap" rel="stylesheet"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;style&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>body {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background-color: #000000;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: #FFFFFF;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-family: 'Noto Sans TC', 'Roboto', sans-serif;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>overflow-x: hidden; /* 防止水平滾動 */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.text-tesla-red {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: #E31937;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.bg-tesla-red {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background-color: #E31937;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.border-tesla-red {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-color: #E31937;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.bento-grid {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>display: grid;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));</p>
+<p class="p1"><span class="Apple-converted-space">            </span>gap: 1.5rem; /* 24px */</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 1.5rem; /* 24px */</p>
+<p class="p1"><span class="Apple-converted-space">            </span>max-width: 1200px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin: 0 auto;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.bento-item {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background-color: #1a1a1a; /* 深灰色背景 */</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 1rem; /* 16px */</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 1.5rem; /* 24px */</p>
+<p class="p1"><span class="Apple-converted-space">            </span>display: flex;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>flex-direction: column;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>justify-content: space-between;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>overflow: hidden; /* 確保內容不會溢出圓角 */</p>
+<p class="p1"><span class="Apple-converted-space">            </span>position: relative; /* 用於絕對定位子元素 */</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border: 1px solid #333; /* 細邊框 */</p>
+<p class="p1"><span class="Apple-converted-space">            </span>transition: transform 0.3s ease-out, box-shadow 0.3s ease-out;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.bento-item:hover {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>transform: translateY(-5px);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>box-shadow: 0 10px 20px rgba(227, 25, 55, 0.2);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.highlight-text-large {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 3rem; /* 48px */</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-weight: 900;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>line-height: 1.1;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.highlight-text-medium {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 2.25rem; /* 36px */</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-weight: 700;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.highlight-text-small {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 1.5rem; /* 24px */</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-weight: 700;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.english-caption {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 0.875rem; /* 14px */</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: #a0a0a0; /* 淺灰色 */</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-family: 'Roboto', sans-serif;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>text-transform: uppercase;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>letter-spacing: 0.05em;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.icon-large {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 4rem; /* 64px */</p>
+<p class="p1"><span class="Apple-converted-space">            </span>opacity: 0.1;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>position: absolute;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>right: 1.5rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>bottom: 1.5rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: #E31937;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>transition: opacity 0.3s ease;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.bento-item:hover .icon-large {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>opacity: 0.3;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>/* 透明度漸變 */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.tesla-red-gradient-bg {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: linear-gradient(45deg, rgba(227, 25, 55, 0.7) 0%, rgba(227, 25, 55, 0.3) 100%);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.tesla-red-gradient-text {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: linear-gradient(45deg, #E31937 30%, #FF6B6B 100%);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>-webkit-background-clip: text;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>-webkit-text-fill-color: transparent;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.section-title {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 1.875rem; /* 30px */</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-weight: 700;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 1rem; /* 16px */</p>
+<p class="p1"><span class="Apple-converted-space">            </span>display: flex;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>align-items: center;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.section-title i {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-right: 0.75rem; /* 12px */</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: #E31937;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.custom-list {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>list-style: none;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding-left: 0;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.custom-list li {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding-left: 1.5em;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>position: relative;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 0.5em;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.custom-list li::before {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>content: "\f105"; /* Font Awesome angle-right */</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-family: "Font Awesome 6 Free";</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-weight: 900;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: #E31937;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>position: absolute;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>left: 0;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>top: 2px;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.line-graphic {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>width: 100%;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>height: 80px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>position: relative;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-top: 1rem;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.line-graphic svg {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>width: 100%;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>height: 100%;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.line-graphic path {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>stroke: #E31937;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>stroke-width: 2;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>fill: none;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>stroke-dasharray: 1000;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>stroke-dashoffset: 1000;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.emphasis-visual {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 5rem; /* 調整大小以避免與內容重疊太多 */</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-weight: 900;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: rgba(227, 25, 55, 0.10); /* 再調淡一些 */</p>
+<p class="p1"><span class="Apple-converted-space">            </span>position: absolute;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>top: 50%;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>left: 50%;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>transform: translate(-50%, -50%) rotate(-15deg);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>z-index: 0;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>pointer-events: none;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>white-space: nowrap;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.content-wrapper {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>position: relative;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>z-index: 1;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.sub-item {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background-color: rgba(227, 25, 55, 0.05);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 0.75rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 0.5rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-top: 0.75rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-left: 3px solid #E31937;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/style&gt;</p>
+<p class="p1">&lt;/head&gt;</p>
+<p class="p1">&lt;body&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;header class="py-8 px-4 text-center"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;h1 class="text-4xl md:text-5xl font-bold mb-2"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;span class="text-tesla-red"&gt;劍橋遊學&lt;/span&gt;行前說明會</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/h1&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;p class="text-lg md:text-xl text-gray-300"&gt;EC 語言學校學生指南 (Chieh-Ming Yang 同學適用)&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;p class="english-caption mt-1"&gt;CAMBRIDGE STUDY TOUR: EC LANGUAGE SCHOOL STUDENT GUIDE (FOR CHIEH-MING YANG)&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/header&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;main class="bento-grid"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="bento-item scroll-reveal" style="grid-column: span 2;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="content-wrapper"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="emphasis-visual"&gt;WELCOME&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;h2 class="section-title"&gt;&lt;i class="fas fa-plane-departure"&gt;&lt;/i&gt;歡迎展開您的劍橋冒險之旅！&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p class="text-gray-300 mb-4"&gt;Chieh-Ming Yang 同學您好，恭喜即將踏上前往英國劍橋的精彩遊學旅程！這不僅是一個提升英語能力的絕佳機會，更是一段豐富個人閱歷、拓展國際視野的難忘體驗。&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p class="english-caption"&gt;Embark on your Cambridge adventure!&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;i class="fas fa-user-graduate icon-large"&gt;&lt;/i&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="bento-item scroll-reveal" style="grid-column: span 3;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="content-wrapper"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="emphasis-visual"&gt;BOOKING&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;h2 class="section-title"&gt;&lt;i class="fas fa-file-invoice-dollar"&gt;&lt;/i&gt;您的專屬預訂資訊&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p class="text-gray-300 mb-2"&gt;學生姓名 (Student Name): &lt;strong class="text-white"&gt;Chieh-Ming Yang&lt;/strong&gt;&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p class="text-gray-300 mb-2"&gt;學生編號 (Student Ref.): &lt;strong class="text-white"&gt;710196&lt;/strong&gt;&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="sub-item"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;strong class="text-tesla-red"&gt;課程 (Course)&lt;/strong&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;p&gt;English Now - For Further Education (20 lessons/week)&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;p&gt;日期: 2025年6月30日 (週一) 至 2025年7月25日 (週五)&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="sub-item"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;strong class="text-tesla-red"&gt;住宿 (Accommodation)&lt;/strong&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;p&gt;寄宿家庭 單人房 (共用衛浴) - 含早餐 (Homestay Single Room, shared bathroom - Bed &amp; Breakfast)&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;p&gt;日期: 2025年6月28日 (週六) 至 2025年7月26日 (週六)&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="sub-item"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;strong class="text-tesla-red"&gt;抵達與離開 (Arrival &amp; Departure)&lt;/strong&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;p&gt;抵達日期: 2025年6月28日 (週六)&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;p&gt;離開日期: 2025年7月26日 (週六)&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="sub-item"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;strong class="text-tesla-red"&gt;機場接送 (Arrival Transfer)&lt;/strong&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;p&gt;已預訂從倫敦希斯洛機場 (LHR) / 聖潘克拉斯火車站 / 倫敦城市機場 (LCY) 的接送服務 (2025年6月28日)&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="sub-item"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;strong class="text-tesla-red"&gt;醫療保險 (Insurance)&lt;/strong&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;p&gt;Guard.me International Plan Insurance&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;p&gt;效期: 2025年6月28日 至 2025年7月26日&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p class="english-caption mt-3"&gt;YOUR PERSONALIZED BOOKING DETAILS.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="bento-item scroll-reveal"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="content-wrapper"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;h2 class="section-title"&gt;&lt;i class="fas fa-city"&gt;&lt;/i&gt;劍橋城市概覽&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p class="highlight-text-small text-tesla-red"&gt;大學城&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p class="english-caption mb-2"&gt;UNIVERSITY CITY&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p class="text-gray-300"&gt;聞名遐邇的大學城，歷史悠久、學術頂尖、建築優美、學生氛圍活潑。康河風景如畫，適合步行和騎自行車探索。&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="line-graphic"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;svg viewBox="0 0 200 80"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;path d="M10 70 Q 50 10, 90 60 T 190 20" class="animated-line"/&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/svg&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">             </span>&lt;i class="fas fa-landmark icon-large"&gt;&lt;/i&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="bento-item scroll-reveal"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="content-wrapper"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;h2 class="section-title"&gt;&lt;i class="fas fa-school"&gt;&lt;/i&gt;EC 語言學校&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p class="highlight-text-small text-tesla-red"&gt;全球知名&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p class="english-caption mb-2"&gt;GLOBALLY RENOWNED&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p class="text-gray-300"&gt;致力於提供沉浸式語言學習環境，專業師資，完善學生支援。EC Cambridge 緊急電話: &lt;strong class="text-white"&gt;+44 (0) 7342037743&lt;/strong&gt;。&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;i class="fas fa-comments icon-large"&gt;&lt;/i&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="bento-item scroll-reveal" style="grid-column: span 3;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="content-wrapper"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="emphasis-visual"&gt;PREPARE&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;h2 class="section-title"&gt;&lt;i class="fas fa-tasks"&gt;&lt;/i&gt;行前重要準備：MyEC &amp; Microsoft Teams&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p class="text-gray-300 mb-3"&gt;為了讓您的學習之旅更順暢，請務必在出發前完成以下準備：&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="grid grid-cols-1 md:grid-cols-2 gap-4"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="sub-item"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;strong class="text-tesla-red"&gt;&lt;i class="fab fa-microsoft mr-1"&gt;&lt;/i&gt; Microsoft Teams 設定&lt;/strong&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;p class="text-sm text-gray-400"&gt;您將透過 MS Teams 與學校和老師聯繫。您的帳戶將於課程開始前14天啟用。&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;p class="text-sm text-gray-400 mt-1"&gt;登入帳號 (Username): &lt;strong class="text-white"&gt;710196@ecenglish.online&lt;/strong&gt;&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;p class="text-sm text-gray-400"&gt;預設密碼 (Password): &lt;strong class="text-white"&gt;Learn123&lt;/strong&gt; (登入後建議修改)&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;p class="text-xs text-gray-500 mt-1"&gt;請務必使用EC提供的帳號登入，勿使用個人Email註冊。&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="sub-item"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;strong class="text-tesla-red"&gt;&lt;i class="fas fa-user-check mr-1"&gt;&lt;/i&gt; MyEC 學生平台 (MyEC Portal)&lt;/strong&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;p class="text-sm text-gray-400"&gt;MyEC是您的個人化學習入口，您可以在此：&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;ul class="custom-list text-xs text-gray-500 ml-4 mt-1"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;li&gt;進行英語分級測驗 (Placement Test - 45分鐘，含寫作)&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;li&gt;填寫學生個人資料表 (Student Personal Details Form)&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;li&gt;完成學習需求分析 (Needs Analysis)&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;li&gt;預習課程、認識城市與學校員工&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;li&gt;追蹤學習進度&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/ul&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;p class="text-sm text-gray-400 mt-2"&gt;&lt;strong&gt;電腦版啟用:&lt;/strong&gt; 使用您的學生編號 &lt;strong class="text-white"&gt;710196&lt;/strong&gt; 及生日 &lt;strong class="text-white"&gt;2004年11月3日&lt;/strong&gt; 透過學校提供的連結啟用帳戶。&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;p class="text-sm text-gray-400 mt-1"&gt;&lt;strong&gt;手機/平板App:&lt;/strong&gt; 下載App後，帳號及密碼均使用 &lt;strong class="text-white"&gt;ecenglish710196&lt;/strong&gt;，首次登入後請重設密碼。&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                         </span>&lt;p class="text-xs text-gray-500 mt-1"&gt;若無法順利登入或操作，可於抵校後進行測驗。&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p class="english-caption mt-3"&gt;IMPORTANT PRE-ARRIVAL SETUP FOR MYEC &amp; MS TEAMS.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="bento-item scroll-reveal" style="grid-column: span 2;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="content-wrapper"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="emphasis-visual"&gt;FLIGHT&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;h2 class="section-title"&gt;&lt;i class="fas fa-plane"&gt;&lt;/i&gt;前往劍橋的旅程規劃：航班&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p class="text-gray-300 mb-2"&gt;從台北 (TPE) 飛往倫敦，常見降落機場包括希斯洛 (LHR)、蓋威克 (LGW)、史坦斯特 (STN)。您的預訂包含 &lt;strong class="text-tesla-red"&gt;機場接送&lt;/strong&gt;，請確認接送詳情。&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p class="text-gray-300 mt-3"&gt;一般而言，票價隨季節、預訂時間和航空公司而變動極大。建議務必提前預訂以獲得較優惠的價格。&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">             </span>&lt;i class="fas fa-map-marked-alt icon-large"&gt;&lt;/i&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="bento-item scroll-reveal" style="grid-column: span 1;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="content-wrapper"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                 </span>&lt;h2 class="section-title"&gt;&lt;i class="fas fa-passport"&gt;&lt;/i&gt;英國入境與簽證&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p class="text-gray-300 mb-2"&gt;持台灣護照進行短期學習 (少於6個月)，適用 &lt;strong class="text-tesla-red"&gt;標準訪客&lt;/strong&gt; 途徑，&lt;strong class="text-tesla-red"&gt;無需&lt;/strong&gt; 事先申請簽證。您將在抵達英國邊境時申請入境。&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p class="english-caption mb-2"&gt;UK ENTRY: STANDARD VISITOR ROUTE FOR TAIWANESE PASSPORT HOLDERS (&lt;6 MONTHS STUDY)&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p class="font-bold mt-3 mb-1"&gt;邊境檢查必備文件：&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;ul class="custom-list text-sm text-gray-400"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;li&gt;有效護照 (效期涵蓋全程)&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;li&gt;EC 入學許可信 (Booking Confirmation)&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;li&gt;財力證明 (英文版銀行存款證明等)&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;li&gt;住宿證明 (EC提供，如寄宿家庭資訊)&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;li&gt;返程/離境機票證明&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;li&gt;旅遊醫療保險證明 (如Guard.me保單)&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/ul&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p class="text-xs text-gray-500 mt-2"&gt;注意：英國ETA系統目前不含台灣短期學習者，但出發前務必再次透過英國政府官網確認最新規定。&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;i class="fas fa-stamp icon-large"&gt;&lt;/i&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="bento-item scroll-reveal" style="grid-column: span 2;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="content-wrapper"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="emphasis-visual"&gt;TRANSPORT&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;h2 class="section-title"&gt;&lt;i class="fas fa-bus-alt"&gt;&lt;/i&gt;機場交通：倫敦機場 &lt;i class="fas fa-arrow-right mx-2"&gt;&lt;/i&gt; 劍橋&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p class="text-gray-300 mb-3"&gt;您已預訂機場接送。若自行安排，主要方式有客運巴士 (National Express) 和火車 (Train)。&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="mb-4"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;canvas id="transportChart"&gt;&lt;/canvas&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p class="text-sm text-gray-400"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;strong class="text-tesla-red"&gt;STN (史坦斯特機場)&lt;/strong&gt; 通常是往返劍橋最便捷的機場選擇。</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p class="english-caption"&gt;AIRPORT TRANSPORT: LONDON TO CAMBRIDGE. STN IS GENERALLY MOST CONVENIENT.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="bento-item scroll-reveal"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="content-wrapper"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;h2 class="section-title"&gt;&lt;i class="fas fa-map-marker-alt"&gt;&lt;/i&gt;EC 劍橋學校位置&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p class="highlight-text-small text-tesla-red"&gt;市中心&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p class="english-caption mb-2"&gt;CITY CENTRE LOCATION&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p class="text-gray-300 text-sm"&gt;地址: 3 Guildhall Chambers, Guildhall Place, Cambridge CB2 3AE, UK.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p class="font-bold mt-3 mb-1"&gt;設施：&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;ul class="custom-list text-sm text-gray-400"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;li&gt;現代化教室 (互動電視)&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;li&gt;學生休息室、圖書館&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;li&gt;免費 Wi-Fi、電腦&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/ul&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;i class="fas fa-wifi icon-large"&gt;&lt;/i&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="bento-item scroll-reveal" style="grid-column: span 2;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="content-wrapper"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="emphasis-visual"&gt;COURSES&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;h2 class="section-title"&gt;&lt;i class="fas fa-book-open"&gt;&lt;/i&gt;您的英語課程&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                 </span>&lt;div class="sub-item mb-3"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;strong class="text-tesla-red"&gt;您已預訂：English Now - For Further Education (每週20堂課)&lt;/strong&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p class="text-gray-400 text-sm"&gt;此課程專為希望提升學術英語能力的學生設計，幫助您為未來升學做好準備。課程著重於批判性思維、學術寫作與口語表達等21世紀關鍵技能，並採用小班制教學。&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p class="text-gray-400 text-sm"&gt;課程材料費 (Course Material Fee) 已包含在您的預訂中。&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p class="text-gray-300 text-sm"&gt;EC亦提供多種其他英語課程，如一般英語、考試準備課程等，滿足不同學習需求。&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p class="english-caption mt-3"&gt;YOUR COURSE: ENGLISH NOW - FOR FURTHER EDUCATION. EC OFFERS OTHER COURSES TOO.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="bento-item scroll-reveal" style="grid-column: span 3;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">             </span>&lt;div class="content-wrapper"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="emphasis-visual"&gt;STAY&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;h2 class="section-title"&gt;&lt;i class="fas fa-home"&gt;&lt;/i&gt;您在劍橋的家：寄宿家庭&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p class="text-gray-300 mb-2"&gt;您已預訂 &lt;strong class="text-tesla-red"&gt;寄宿家庭單人房 (含早餐，共用衛浴)&lt;/strong&gt;。這是深入體驗英國文化和日常生活的絕佳方式。&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p class="english-caption mb-2"&gt;YOUR ACCOMMODATION: HOMESTAY SINGLE ROOM (B&amp;B, SHARED BATHROOM)&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="sub-item"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;strong class="text-tesla-red"&gt;寄宿家庭特色&lt;/strong&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;ul class="custom-list text-gray-400"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;li&gt;與當地家庭同住，練習英語。&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;li&gt;體驗英式生活文化。&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;li&gt;通常提供床單、毛巾，每週可洗衣一次。&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;li&gt;通常有網路。&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/ul&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                     </span>&lt;div class="sub-item"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;strong class="text-tesla-red"&gt;注意事項&lt;/strong&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;ul class="custom-list text-gray-400"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;li&gt;尊重寄宿家庭的生活習慣與規定。&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;li&gt;通勤至學校時間可能需30-60分鐘巴士。&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;li&gt;若有特殊飲食需求，請務必提前告知學校。&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;li&gt;住宿安排費 (Accommodation Placement Fee) 已包含在您的預訂中。&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/ul&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p class="text-gray-300 mt-3 text-sm"&gt;EC 也提供學生宿舍等其他住宿類型給不同需求的學生。您的住宿日期為 &lt;strong class="text-white"&gt;2025年6月28日至7月26日&lt;/strong&gt;。&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p class="text-xs text-gray-500 mt-2"&gt;請留意EC的住宿取消政策。若需更改，請儘早通知學校。&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="bento-item scroll-reveal" style="grid-column: span 2;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="content-wrapper"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="emphasis-visual"&gt;MONEY&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;h2 class="section-title"&gt;&lt;i class="fas fa-pound-sign"&gt;&lt;/i&gt;關於金錢：貨幣與預算&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p class="text-gray-300 mb-2"&gt;英國貨幣：英鎊 (£, GBP)。建議在台換少量現鈔，抵英後可考慮使用數位銀行 (Monzo, Revolut) 或預付外幣卡。&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p class="font-bold mt-3 mb-1 text-tesla-red"&gt;每月預估生活費 (不含您已預付的學費、住宿費、課程材料費、保險費等):&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p class="highlight-text-medium"&gt;£400 - £800+&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p class="english-caption"&gt;ESTIMATED MONTHLY PERSONAL EXPENSES (EXCL. PRE-PAID ITEMS)&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p class="text-sm text-gray-400 mt-2"&gt;此預算主要用於食物 (午晚餐及週末)、本地交通、個人用品、社交娛樂等。您的早餐已由寄宿家庭提供。&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                 </span>&lt;div class="line-graphic"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;svg viewBox="0 0 200 80"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;path d="M10 40 C 40 10, 60 70, 100 40 S 150 10, 190 50" class="animated-line"/&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/svg&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="bento-item scroll-reveal"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="content-wrapper"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;h2 class="section-title"&gt;&lt;i class="fas fa-bicycle"&gt;&lt;/i&gt;劍橋市內交通&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p class="highlight-text-small text-tesla-red"&gt;步行 &amp; 自行車&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p class="english-caption mb-2"&gt;WALKING &amp; CYCLING ARE KEY&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p class="text-gray-300 text-sm"&gt;劍橋市區不大，自行車是當地最受歡迎的方式 (&gt;80英里自行車道)。&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p class="font-bold mt-3 mb-1"&gt;巴士 (Stagecoach):&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;ul class="custom-list text-sm text-gray-400"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;li&gt;單程約 £2.80&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;li&gt;週票約 £22&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;li&gt;月票約 £50-£80&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/ul&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;i class="fas fa-bus icon-large"&gt;&lt;/i&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="bento-item scroll-reveal" style="grid-column: span 1;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="content-wrapper"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;h2 class="section-title"&gt;&lt;i class="fas fa-heartbeat"&gt;&lt;/i&gt;健康與保險&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p class="text-gray-300 mb-2"&gt;您已預訂 &lt;strong class="text-tesla-red"&gt;Guard.me 國際學生醫療保險&lt;/strong&gt;。請隨身攜帶保險證明文件。&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p class="english-caption mb-2"&gt;YOUR GUARD.ME INSURANCE IS BOOKED.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p class="text-sm text-gray-400"&gt;全面的旅遊醫療保險極其重要。短期學生通常無法免費使用NHS (除急診A&amp;E服務外，其他需付費)。&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;i class="fas fa-file-medical-alt icon-large"&gt;&lt;/i&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="bento-item scroll-reveal"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="content-wrapper"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;h2 class="section-title"&gt;&lt;i class="fas fa-plug"&gt;&lt;/i&gt;電力與轉接頭&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p class="text-gray-300 mb-2"&gt;英國電壓 &lt;strong class="text-tesla-red"&gt;230V, 50Hz&lt;/strong&gt;。插座為 &lt;strong class="text-tesla-red"&gt;G 型&lt;/strong&gt; (三長方插腳)。&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p class="english-caption mb-2"&gt;UK VOLTAGE: 230V, 50HZ. TYPE G PLUG.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p class="text-sm text-gray-400"&gt;務必攜帶 &lt;strong class="text-white"&gt;G 型旅行轉接頭&lt;/strong&gt;。檢查電器是否為國際電壓 (100-240V)，否則需 &lt;strong class="text-white"&gt;變壓器&lt;/strong&gt;。&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;i class="fas fa-bolt icon-large"&gt;&lt;/i&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="bento-item scroll-reveal" style="grid-column: span 2;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="content-wrapper"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="emphasis-visual"&gt;MANNERS&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;h2 class="section-title"&gt;&lt;i class="fas fa-handshake"&gt;&lt;/i&gt;融入英國：文化與禮儀&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;ul class="custom-list text-sm text-gray-300 grid grid-cols-1 md:grid-cols-2 gap-x-4"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;li&gt;禮貌用語: "Please", "Thank you", "Sorry" 常掛嘴邊。&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;li&gt;守時: 非常重要。&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;li&gt;排隊: 必須遵守。&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;li&gt;個人空間: 保持距離。&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;li&gt;閒聊 (Small Talk): 以天氣等開啟對話。&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;li&gt;英式幽默: 自嘲、諷刺。&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;li&gt;小費: 非強制，餐廳約10-15%。&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/ul&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p class="english-caption mt-3"&gt;CULTURE &amp; ETIQUETTE: POLITENESS, PUNCTUALITY, QUEUING.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="bento-item scroll-reveal" style="grid-column: span 3;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="content-wrapper"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="emphasis-visual"&gt;EXPLORE&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;h2 class="section-title"&gt;&lt;i class="fas fa-binoculars"&gt;&lt;/i&gt;探索劍橋及周邊&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                 </span>&lt;p class="text-gray-300 mb-3"&gt;劍橋充滿歷史與學術氛圍，值得細細品味。&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;strong class="text-tesla-red"&gt;&lt;i class="fas fa-university mr-1"&gt;&lt;/i&gt;大學校園&lt;/strong&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;p class="text-gray-400"&gt;國王學院禮拜堂、各學院、康河撐篙 (Punting)。&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;strong class="text-tesla-red"&gt;&lt;i class="fas fa-landmark mr-1"&gt;&lt;/i&gt;博物館&lt;/strong&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;p class="text-gray-400"&gt;費茲威廉博物館、考古學、動物學博物館等。&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;strong class="text-tesla-red"&gt;&lt;i class="fas fa-tree mr-1"&gt;&lt;/i&gt;其他景點&lt;/strong&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;p class="text-gray-400"&gt;植物園、市集廣場、聖母瑪利亞大學教堂。&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p class="font-bold mt-4 mb-1 text-tesla-red"&gt;學生折扣 (TOTUM 卡):&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p class="text-sm text-gray-400"&gt;可考慮申辦TOTUM卡，在眾多商店、餐廳享有優惠。消費時可主動詢問店家學生折扣。&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p class="english-caption mt-3"&gt;CAMBRIDGE ATTRACTIONS: COLLEGES, MUSEUMS, PUNTING, BOTANIC GARDEN.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="bento-item scroll-reveal"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="content-wrapper"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;h2 class="section-title"&gt;&lt;i class="fas fa-shield-alt"&gt;&lt;/i&gt;安全須知與重要聯絡&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p class="highlight-text-large text-tesla-red"&gt;999&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p class="english-caption mb-1"&gt;英國緊急求助 (警察/救護車/消防)&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p class="text-gray-300 text-sm mb-2"&gt;非緊急報警：&lt;strong class="text-white"&gt;101&lt;/strong&gt;。&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="sub-item text-sm"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;strong class="text-tesla-red"&gt;EC Cambridge 緊急聯絡:&lt;/strong&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p class="text-white"&gt;+44 (0) 7342037743&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="sub-item text-sm mt-2"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;strong class="text-tesla-red"&gt;駐英國台北代表處 (倫敦):&lt;/strong&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p&gt;電話: (020) 7881 2650&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p&gt;旅英國人急難救助: 07768 938 765&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;i class="fas fa-phone-volume icon-large"&gt;&lt;/i&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="bento-item scroll-reveal" style="grid-column: span 2;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="content-wrapper"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="emphasis-visual"&gt;PACK&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;h2 class="section-title"&gt;&lt;i class="fas fa-suitcase-rolling"&gt;&lt;/i&gt;最後準備：打包清單建議&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p class="text-gray-300 mb-2"&gt;英國天氣多變，採 &lt;strong class="text-tesla-red"&gt;洋蔥式穿搭&lt;/strong&gt;。預留行李空間。&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="grid grid-cols-1 md:grid-cols-2 gap-x-4 text-sm"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;strong class="text-white"&gt;必備物品：&lt;/strong&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;ul class="custom-list text-gray-400"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;li&gt;重要文件 (護照、EC入學信/預訂確認函、財力證明、住宿證明、回程機票、保險證明)&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;li&gt;防水外套、保暖衣物&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;li&gt;舒適鞋子、一套正式場合服裝&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;li&gt;手機、筆電、G型轉接頭 (及變壓器若需要)&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;li&gt;個人處方藥 (備足份量+英文處方箋)&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;li&gt;少量英鎊現金、信用卡/提款卡&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/ul&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;strong class="text-white"&gt;建議攜帶：&lt;/strong&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;ul class="custom-list text-gray-400"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;li&gt;雨靴、圍巾手套 (秋冬)&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;li&gt;相機、行動電源&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;li&gt;雨傘、可重複用之水瓶、後背包&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/ul&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p class="english-caption mt-3"&gt;PACKING LIST: LAYERS ARE KEY FOR UK WEATHER.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/main&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;footer class="text-center py-8 px-4"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;p class="text-gray-400"&gt;預祝 Chieh-Ming Yang 同學在劍橋有一段充實、愉快且安全的遊學時光！&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;p class="english-caption mt-1"&gt;WISHING YOU A FULFILLING, ENJOYABLE, AND SAFE STUDY TOUR IN CAMBRIDGE!&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/footer&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;script&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>// Ensure the script runs after the DOM is fully loaded</p>
+<p class="p1"><span class="Apple-converted-space">        </span>document.addEventListener('DOMContentLoaded', () =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>// Framer Motion scroll reveal animation</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const framerAnimate = window.FramerMotion &amp;&amp; window.FramerMotion.animate;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>if (framerAnimate) {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>document.querySelectorAll('.scroll-reveal').forEach((el, index) =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>el.style.opacity = 0;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>el.style.transform = 'translateY(30px)';</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">                    </span>const observer = new IntersectionObserver(</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>(entries) =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>entries.forEach(entry =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>if (entry.isIntersecting) {</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>framerAnimate(el,</p>
+<p class="p1"><span class="Apple-converted-space">                                        </span>{ opacity: 1, y: 0 },</p>
+<p class="p1"><span class="Apple-converted-space">                                        </span>{ duration: 0.6, ease: "easeOut", delay: index * 0.05 } // Reduced delay slightly</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>);</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>observer.unobserve(el);</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>}</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>});</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>},</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>{ threshold: 0.1 }<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">                    </span>);</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>observer.observe(el);</p>
+<p class="p1"><span class="Apple-converted-space">                </span>});</p>
+<p class="p1"><span class="Apple-converted-space">            </span>} else {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>console.warn('Framer Motion animate function not found. Scroll animations will not work.');</p>
+<p class="p1"><span class="Apple-converted-space">                </span>document.querySelectorAll('.scroll-reveal').forEach(el =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>el.style.opacity = 1;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>el.style.transform = 'translateY(0px)';</p>
+<p class="p1"><span class="Apple-converted-space">                </span>});</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>const animatedLines = document.querySelectorAll('.animated-line');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>animatedLines.forEach(line =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>const observer = new IntersectionObserver(entries =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>entries.forEach(entry =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>if (entry.isIntersecting) {</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>line.style.transition = 'stroke-dashoffset 2s ease-out';</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>line.style.strokeDashoffset = '0';</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>observer.unobserve(line);</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>});</p>
+<p class="p1"><span class="Apple-converted-space">                </span>}, { threshold: 0.5 });</p>
+<p class="p1"><span class="Apple-converted-space">                </span>observer.observe(line);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>});</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>const transportCtx = document.getElementById('transportChart');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>if (transportCtx) {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>new Chart(transportCtx, {</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>type: 'bar',</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>data: {</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>labels: ['LHR (巴士)', 'LHR (火車)', 'LGW (巴士)', 'LGW (火車)', 'STN (巴士)', 'STN (火車)'],</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>datasets: [{</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>label: '預估時間 (分鐘)',</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>data: [150, 145, 255, 115, 50, 32],<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">                            </span>backgroundColor: [</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>'rgba(227, 25, 55, 0.5)',</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>'rgba(227, 25, 55, 0.4)',</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>'rgba(227, 25, 55, 0.3)',</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>'rgba(227, 25, 55, 0.6)',</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>'rgba(227, 25, 55, 0.8)',</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>'rgba(227, 25, 55, 0.9)'</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>],</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>borderColor: '#E31937',</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>borderWidth: 1</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>},</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>{</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>label: '預估費用 (£起)',</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>data: [19, 25, 30, 30, 14, 9.5],</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>backgroundColor: [</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>'rgba(150, 150, 150, 0.5)',</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>'rgba(150, 150, 150, 0.4)',</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>'rgba(150, 150, 150, 0.3)',</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>'rgba(150, 150, 150, 0.6)',</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>'rgba(150, 150, 150, 0.8)',</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>'rgba(150, 150, 150, 0.9)'</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>],</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>borderColor: '#888888',</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>borderWidth: 1,</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>yAxisID: 'y1'<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">                        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>]</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>},</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>options: {</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>responsive: true,</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>maintainAspectRatio: false,</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>scales: {</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>y: {</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>beginAtZero: true,</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>title: { display: true, text: '時間 (分鐘)', color: '#FFFFFF' },</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>ticks: { color: '#CCCCCC' },</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>grid: { color: 'rgba(255,255,255,0.1)'}</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>},</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>y1: {<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">                                </span>beginAtZero: true,</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>position: 'right',</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>title: { display: true, text: '費用 (£)', color: '#FFFFFF' },</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>ticks: { color: '#CCCCCC' },</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>grid: { drawOnChartArea: false }<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">                            </span>}</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>},</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>plugins: {</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>legend: {</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>labels: { color: '#FFFFFF' }</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>},</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>tooltip: {</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>titleColor: '#FFFFFF',</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>bodyColor: '#DDDDDD',</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>backgroundColor: 'rgba(0,0,0,0.8)',</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>}</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">                </span>});</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>});</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/script&gt;</p>
+<p class="p1">&lt;/body&gt;</p>
+<p class="p1">&lt;/html&gt;</p>
+</body>
+</html>
