@@ -1,10 +1,544 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-Hant">
 <head>
-  <meta charset="UTF-8">
-  <title>About Page</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>溫哥華遊學行前說明會 - Tung-Yen Tsai</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.jsdelivr.net/npm/framer-motion@10.16.4/dist/framer-motion.umd.min.js"></script>
+    <style>
+        /* 自定義 Tesla Red 顏色 */
+        .bg-tesla-red { background-color: #E31937; }
+        .text-tesla-red { color: #E31937; }
+        .border-tesla-red { border-color: #E31937; }
+
+        /* 基本樣式 */
+        body {
+            background-color: #000000;
+            color: #ffffff;
+            font-family: 'Inter', 'Noto Sans TC', sans-serif; /* Inter for English, Noto Sans TC for Chinese */
+        }
+        /* Bento Grid 容器 */
+        .bento-grid {
+            display: grid;
+            gap: 1rem; /* 間距 */
+            padding: 1rem;
+            max-width: 1200px;
+            margin: auto;
+            /* 響應式列數 */
+            grid-template-columns: repeat(1, 1fr); /* 手機：1列 */
+        }
+        /* 平板及以上：自動調整列數 */
+        @media (min-width: 768px) {
+            .bento-grid {
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* 自動填充，最小寬度300px */
+            }
+        }
+        /* Bento Grid 項目 */
+        .bento-item {
+            background-color: #1a1a1a; /* 深灰色背景 */
+            border-radius: 1rem; /* 圓角 */
+            padding: 1.5rem;
+            overflow: hidden; /* 防止內容溢出 */
+            position: relative;
+            border: 1px solid #333; /* 細邊框 */
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .bento-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(227, 25, 55, 0.2); /* 紅色陰影 */
+        }
+        /* 特殊大小的項目 */
+        @media (min-width: 768px) {
+            .bento-item-large {
+                grid-column: span 2; /* 佔用兩列 */
+            }
+             .bento-item-xlarge { /* For summary card */
+                grid-column: 1 / -1; /* Span all columns */
+            }
+            .bento-item-tall {
+                 grid-row: span 2; /* 佔用兩行 (如果網格允許) */
+            }
+        }
+         /* 大標題樣式 */
+        .title-large {
+            font-size: 3rem; /* 調整大標題字體大小 */
+            font-weight: 700; /* 粗體 */
+            line-height: 1.2;
+        }
+        @media (min-width: 768px) {
+            .title-large {
+                font-size: 4rem; /* 桌面版更大 */
+            }
+        }
+        /* 小標題/英文點綴 */
+        .subtitle-small {
+            font-size: 0.875rem; /* 調整小標題字體大小 */
+            color: #a0a0a0; /* 灰色 */
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        /* 高亮樣式 */
+        .highlight {
+            color: #E31937;
+            font-weight: 700;
+        }
+        /* 圖標樣式 */
+        .icon-large {
+            font-size: 4rem;
+            opacity: 0.8;
+            margin-bottom: 1rem;
+        }
+         /* 漸變效果 */
+        .gradient-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 50%;
+            background: linear-gradient(to top, rgba(227, 25, 55, 0.3) 0%, rgba(227, 25, 55, 0) 100%);
+            border-radius: 0 0 1rem 1rem;
+            pointer-events: none; /* 允許點擊穿透 */
+        }
+        /* 勾線圖形化 - 簡單分隔線 */
+        .line-divider {
+            height: 2px;
+            background-color: #E31937;
+            opacity: 0.5;
+            margin: 1rem 0;
+            width: 50px; /* 短分隔線 */
+        }
+        /* 隱藏滾動條 */
+        ::-webkit-scrollbar {
+             display: none;
+        }
+        html {
+            scroll-behavior: smooth; /* 平滑滾動 */
+            -ms-overflow-style: none;  /* IE and Edge */
+            scrollbar-width: none;  /* Firefox */
+        }
+        .summary-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+        }
+        .summary-item p {
+            margin-bottom: 0.25rem;
+        }
+    </style>
 </head>
-<body>
-  <h1>This is my about page</h1>
+<body class="bg-black text-white">
+
+    <header class="container mx-auto px-6 py-16 text-center">
+         <motion.div initial={{ opacity: 0, y: -50 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
+            <h1 class="title-large mb-2">溫哥華遊學 <span class="text-tesla-red">啟程</span></h1>
+            <p class="subtitle-small text-gray-400">VANCOUVER STUDY TRIP - PRE-DEPARTURE GUIDE</p>
+            <p class="mt-4 text-lg">專為 <strong class="text-tesla-red">Tung-Yen Tsai</strong> (學生ID: 2087640) 設計</p>
+         </motion.div>
+    </header>
+
+    <main class="bento-grid">
+        <motion.div class="bento-item bento-item-xlarge" initial={{ opacity: 0, scale: 0.9 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true, amount: 0.1 }} transition={{ duration: 0.5 }}>
+            <div class="flex items-center mb-4">
+                <i class="fas fa-id-card text-tesla-red fa-3x mr-4"></i>
+                <div>
+                    <h2 class="text-2xl font-bold">學生與課程總覽</h2>
+                    <p class="subtitle-small">STUDENT & BOOKING OVERVIEW</p>
+                </div>
+            </div>
+            <div class="summary-grid text-sm">
+                <div class="summary-item">
+                    <h4 class="font-semibold text-tesla-red mb-1">學生資訊</h4>
+                    <p><strong>姓名 (Name):</strong> Mr. Tung-Yen Tsai</p>
+                    <p><strong>學生ID (Student ID):</strong> 2087640</p>
+                    <p><strong>生日 (DOB):</strong> 2005年9月30日</p>
+                    <p><strong>國籍 (Nationality):</strong> Taiwan</p>
+                </div>
+                <div class="summary-item">
+                    <h4 class="font-semibold text-tesla-red mb-1">課程與學校</h4>
+                    <p><strong>學校 (School):</strong> Kaplan Vancouver</p>
+                    <p><strong>課程 (Course):</strong> General English</p>
+                    <p><strong>時長 (Duration):</strong> 4 週 (15 小時/週)</p>
+                    <p><strong>課程期間 (Dates):</strong> 2025年6月9日 - 2025年7月4日</p>
+                </div>
+                <div class="summary-item">
+                    <h4 class="font-semibold text-tesla-red mb-1">住宿與服務</h4>
+                    <p><strong>住宿 (Accommodation):</strong> Residence Viva Tower (Single Room)</p>
+                    <p><strong>住宿期間 (Dates):</strong> 2025年6月8日 - 2025年7月5日</p>
+                    <p><strong>醫療保險 (Insurance):</strong> Guard.ME (2025年6月8日 - 7月5日)</p>
+                    <p><strong>接機 (Transfer):</strong> 是 (2025年6月8日)</p>
+                </div>
+                 <div class="summary-item">
+                    <h4 class="font-semibold text-tesla-red mb-1">財務狀況</h4>
+                    <p><strong>總費用 (Total Fees):</strong> CAD 4,652.00</p>
+                    <p><strong>付款狀態 (Status):</strong> <span class="text-green-400 font-semibold">已全額支付 (Fully Paid)</span></p>
+                    <p><strong>訂位代號 (Booking Ref):</strong> 56NNOW</p>
+                </div>
+            </div>
+        </motion.div>
+
+        <motion.div class="bento-item bento-item-large" initial={{ opacity: 0, scale: 0.9 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true, amount: 0.3 }} transition={{ duration: 0.5 }}>
+            <i class="fas fa-plane-departure text-tesla-red icon-large"></i>
+            <h2 class="text-2xl font-bold mb-2">出發前準備</h2>
+            <p class="subtitle-small mb-4">PRE-DEPARTURE PREPARATION</p>
+            <div class="line-divider"></div>
+            <p class="text-gray-300">確保一切就緒，順利啟程。</p>
+        </motion.div>
+
+        <motion.div class="bento-item" initial={{ opacity: 0, y: 50 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.5 }} transition={{ duration: 0.5 }}>
+            <i class="fas fa-passport text-tesla-red fa-2x mb-3"></i>
+            <h3 class="text-xl font-semibold mb-2">簽證與入學許可</h3>
+            <p class="subtitle-small mb-3">VISA & ACCEPTANCE</p>
+            <p class="text-sm text-gray-400 mb-2">您的課程為 <strong class="text-white">General English (4週)</strong>，從 <strong class="text-white">2025年6月9日</strong> 至 <strong class="text-white">2025年7月4日</strong>。</p>
+            <p class="text-sm text-gray-400 mb-2">由於課程長度少於6個月，您需要申請 <strong class="text-white">電子旅行證 (eTA)</strong> 入境加拿大。</p>
+            <p class="text-sm text-gray-400">請確保您持有有效的 <strong class="text-white">Kaplan 錄取通知書 (LOA)</strong>。Kaplan Vancouver 的 DLI 編號為 <strong class="text-white">O19394941182</strong>。</p>
+             <p class="text-xs text-gray-500 mt-3">*無需申請學習許可 (Study Permit) 或 PAL。</p>
+        </motion.div>
+
+        <motion.div class="bento-item" initial={{ opacity: 0, y: 50 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.5 }} transition={{ duration: 0.5 }}>
+            <i class="fas fa-plane text-tesla-red fa-2x mb-3"></i>
+            <h3 class="text-xl font-semibold mb-2">航班資訊</h3>
+            <p class="subtitle-small mb-3">FLIGHT INFORMATION (CHINA AIRLINES)</p>
+            <div class="text-sm text-gray-400 space-y-2">
+                <div>
+                    <p class="font-semibold text-white">去程 (TPE <i class="fas fa-arrow-right mx-1"></i> YVR)</p>
+                    <p>航班 (Flight): <strong class="text-white">CI32</strong></p>
+                    <p>日期 (Date): <strong class="text-white">2025年6月8日</strong></p>
+                    <p>時間 (Time): <strong class="text-white">23:35 (TPE) - 19:20 (YVR)</strong></p>
+                    <p>航廈 (Terminal): TPE T2 <i class="fas fa-arrow-right mx-1"></i> YVR T-M</p>
+                </div>
+                <div>
+                    <p class="font-semibold text-white">回程 (YVR <i class="fas fa-arrow-right mx-1"></i> TPE)</p>
+                    <p>航班 (Flight): <strong class="text-white">CI31</strong></p>
+                    <p>日期 (Date): <strong class="text-white">2025年7月5日</strong></p>
+                    <p>時間 (Time): <strong class="text-white">02:00 (YVR) - 05:00 (TPE, 7月6日)</strong></p>
+                    <p>航廈 (Terminal): YVR T-M <i class="fas fa-arrow-right mx-1"></i> TPE T2</p>
+                </div>
+                <p>行李 (Baggage): <strong class="text-white">2件 (2PC)</strong></p>
+                <p>訂位代號 (Booking Ref): <strong class="text-white">56NNOW</strong></p>
+            </div>
+        </motion.div>
+
+        <motion.div class="bento-item" initial={{ opacity: 0, y: 50 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.5 }} transition={{ duration: 0.5 }}>
+            <i class="fas fa-file-alt text-tesla-red fa-2x mb-3"></i>
+            <h3 class="text-xl font-semibold mb-2">入境所需文件</h3>
+            <p class="subtitle-small mb-3">DOCUMENTS FOR ENTRY</p>
+            <ul class="list-disc list-inside text-sm text-gray-400 space-y-1">
+                <li>有效護照 (Passport)</li>
+                <li>Kaplan Vancouver LOA 副本</li>
+                <li>電子旅行證 (eTA) 核准證明</li>
+                <li>財力證明 (Proof of Funds)</li>
+                <li>Guard.ME 保險確認信</li>
+                <li>Kaplan 訂位確認信</li>
+                <li>來回機票行程單 (含訂位代號 56NNOW)</li>
+                 <li>(若申請eTA時被要求) 體檢證明</li>
+            </ul>
+            <p class="text-xs text-gray-500 mt-3">*請隨身攜帶，勿托運。</p>
+        </motion.div>
+
+        <motion.div class="bento-item" initial={{ opacity: 0, y: 50 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.5 }} transition={{ duration: 0.5 }}>
+             <i class="fas fa-suitcase-rolling text-tesla-red fa-2x mb-3"></i>
+            <h3 class="text-xl font-semibold mb-2">行李打包建議</h3>
+            <p class="subtitle-small mb-3">PACKING SUGGESTIONS</p>
+            <p class="text-sm text-gray-400 mb-2"><strong class="text-white">衣物:</strong> 洋蔥式穿搭，必備防水外套/鞋。冬季多雨，快乾褲優於牛仔褲。</p>
+            <p class="text-sm text-gray-400 mb-2"><strong class="text-white">個人用品:</strong> 攜帶旅行裝，當地可購。</p>
+            <p class="text-sm text-gray-400 mb-2"><strong class="text-white">藥品:</strong> 常備藥及處方藥 (附英文處方箋/證明)，保留原始包裝。</p>
+            <p class="text-sm text-gray-400 mb-2"><strong class="text-white">電子產品:</strong> 筆電、手機、充電器。台加電壓(110V/120V)相容，插座(A/B型)通用，可備萬用轉接頭。</p>
+            <p class="text-xs text-gray-500 mt-3">*鋰電池、行動電源需隨身攜帶。</p>
+        </motion.div>
+
+        <motion.div class="bento-item" initial={{ opacity: 0, y: 50 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.5 }} transition={{ duration: 0.5 }}>
+            <i class="fas fa-money-check-alt text-tesla-red fa-2x mb-3"></i>
+            <h3 class="text-xl font-semibold mb-2">財務準備</h3>
+            <p class="subtitle-small mb-3">FINANCIAL PREPARATION</p>
+            <p class="text-sm text-gray-400 mb-2">您的學費、住宿費及保險費用 <strong class="text-white">CAD 4,652.00</strong> 已全額支付。</p>
+            <p class="text-sm text-gray-400 mb-2">建議攜帶少量加幣現金 (約 <strong class="text-white">CAD 200-500</strong>) 供初期花費。</p>
+            <p class="text-sm text-gray-400">主要消費可使用信用卡/金融卡 (請先通知台灣的銀行)。</p>
+            <p class="text-xs text-gray-500 mt-3">*攜帶超過CAD 10,000現金需申報。</p>
+        </motion.div>
+
+        <motion.div class="bento-item bento-item-large" initial={{ opacity: 0, scale: 0.9 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true, amount: 0.3 }} transition={{ duration: 0.5 }}>
+            <i class="fas fa-map-marked-alt text-tesla-red icon-large"></i>
+            <h2 class="text-2xl font-bold mb-2">抵達溫哥華</h2>
+            <p class="subtitle-small mb-4">ARRIVAL IN VANCOUVER</p>
+            <div class="line-divider"></div>
+            <p class="text-gray-300">順利入境，開啟新生活。</p>
+        </motion.div>
+
+        <motion.div class="bento-item" initial={{ opacity: 0, y: 50 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.5 }} transition={{ duration: 0.5 }}>
+            <i class="fas fa-user-check text-tesla-red fa-2x mb-3"></i>
+            <h3 class="text-xl font-semibold mb-2">YVR 機場入境</h3>
+            <p class="subtitle-small mb-3">YVR AIRPORT ARRIVAL</p>
+            <p class="text-sm text-gray-400 mb-2">跟隨「Arrivals」指示前往 CBSA 檢查區。</p>
+            <p class="text-sm text-gray-400 mb-2">使用自助服務機 (Primary Inspection Kiosks) 回答問題並列印收據。</p>
+            <p class="text-sm text-gray-400">將收據及護照交給 CBSA 官員。</p>
+             <p class="text-xs text-gray-500 mt-3">*由於您持 eTA 且課程短於6個月，通常無需前往移民局領取學習許可。</p>
+        </motion.div>
+
+        <motion.div class="bento-item" initial={{ opacity: 0, y: 50 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.5 }} transition={{ duration: 0.5 }}>
+             <i class="fas fa-car text-tesla-red fa-2x mb-3"></i>
+            <h3 class="text-xl font-semibold mb-2">機場交通</h3>
+            <p class="subtitle-small mb-3">AIRPORT TRANSPORTATION</p>
+            <p class="text-sm text-gray-400 mb-2"><strong class="text-white">您的選擇:</strong> 您已預訂 <strong class="text-white">Kaplan 接機服務</strong>，將於 <strong class="text-white">2025年6月8日</strong> (配合您的航班CI32 19:20抵達) 接機。</p>
+            <p class="text-sm text-gray-400 mb-2">請留意持 Kaplan 標誌牌子的司機。</p>
+            <p class="text-sm text-gray-400 mb-2">接機緊急聯絡電話: <strong class="text-white">(778) 773-5466</strong> 或 <strong class="text-white">+1 604 602 9818</strong> (請確認應使用哪個號碼)。</p>
+            <p class="text-sm text-gray-400 mb-2">其他選項: Canada Line 空中列車 (約 CAD 9-11 到市中心), 計程車 (約 CAD 35-45+), Uber/Lyft (約 CAD 31+)。</p>
+        </motion.div>
+
+         <motion.div class="bento-item" initial={{ opacity: 0, y: 50 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.5 }} transition={{ duration: 0.5 }}>
+            <i class="fas fa-school text-tesla-red fa-2x mb-3"></i>
+            <h3 class="text-xl font-semibold mb-2">Kaplan Vancouver 初識</h3>
+            <p class="subtitle-small mb-3">KAPLAN VANCOUVER INTRODUCTION</p>
+            <p class="text-sm text-gray-400 mb-2">地址: <strong class="text-white">Suite 300, 755 Burrard Street, V6Z 1X6</strong></p>
+            <p class="text-sm text-gray-400 mb-2">學校電話: <strong class="text-white">+1 (604) 688-8330</strong></p>
+            <p class="text-sm text-gray-400 mb-2">緊急電話: <strong class="text-white">+1 (778) 834-7223</strong></p>
+            <p class="text-sm text-gray-400 mb-2"><strong class="text-white">新生指導 (Orientation):</strong> <strong class="text-white">星期一 (6月9日)</strong> 開始。您將在開課前收到分級測驗連結及歡迎郵件，告知所需文件及確切報到時間。</p>
+            <p class="text-sm text-gray-400">設施: 互動白板、學生休息室、自修中心、IELTS 考場。</p>
+            <p class="text-xs text-gray-500 mt-3">關注學校 FB/IG 獲取最新消息。</p>
+        </motion.div>
+
+        <motion.div class="bento-item bento-item-large" initial={{ opacity: 0, scale: 0.9 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true, amount: 0.3 }} transition={{ duration: 0.5 }}>
+             <i class="fas fa-city text-tesla-red icon-large"></i>
+            <h2 class="text-2xl font-bold mb-2">溫哥華生活指南</h2>
+            <p class="subtitle-small mb-4">VANCOUVER LIVING GUIDE</p>
+            <div class="line-divider"></div>
+            <p class="text-gray-300">食衣住行育樂全攻略。</p>
+        </motion.div>
+
+        <motion.div class="bento-item" initial={{ opacity: 0, y: 50 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.5 }} transition={{ duration: 0.5 }}>
+            <i class="fas fa-home text-tesla-red fa-2x mb-3"></i>
+            <h3 class="text-xl font-semibold mb-2">住宿安排</h3>
+            <p class="subtitle-small mb-3">ACCOMMODATION</p>
+            <p class="text-sm text-gray-400 mb-2">您已預訂 <strong class="text-white">學生宿舍 Viva Tower Apartments</strong>。</p>
+            <p class="text-sm text-gray-400 mb-2">房型: <strong class="text-white">單人房 (Single Room)</strong>，無私人衛浴。</p>
+            <p class="text-sm text-gray-400 mb-2">入住日期: <strong class="text-white">2025年6月8日</strong></p>
+            <p class="text-sm text-gray-400 mb-2">退房日期: <strong class="text-white">2025年7月5日</strong></p>
+            <p class="text-sm text-gray-400 mb-2">特色: 市中心、近學校 (步行約12分)、含水電、WiFi、Netflix、健身房、共用廚房客廳。</p>
+            <p class="text-xs text-gray-500 mt-3">*入住時間通常為週六/日下午4-9點，退房為週六上午10點。可能需付押金。</p>
+        </motion.div>
+
+         <motion.div class="bento-item" initial={{ opacity: 0, y: 50 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.5 }} transition={{ duration: 0.5 }}>
+            <i class="fas fa-sim-card text-tesla-red fa-2x mb-3"></i>
+            <h3 class="text-xl font-semibold mb-2">手機與網路</h3>
+            <p class="subtitle-small mb-3">MOBILE & INTERNET</p>
+            <p class="text-sm text-gray-400 mb-2">建議抵達後盡快辦理加拿大手機 SIM 卡及門號。</p>
+            <p class="text-sm text-gray-400 mb-2">主要運營商: Rogers, Bell, Telus 及其子品牌 (Fido, Koodo, Virgin Plus 等)。</p>
+            <p class="text-sm text-gray-400">宿舍 (Viva Tower) 已包含 WiFi。</p>
+        </motion.div>
+
+        <motion.div class="bento-item" initial={{ opacity: 0, y: 50 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.5 }} transition={{ duration: 0.5 }}>
+             <i class="fas fa-university text-tesla-red fa-2x mb-3"></i>
+            <h3 class="text-xl font-semibold mb-2">銀行開戶</h3>
+            <p class="subtitle-small mb-3">BANKING</p>
+            <p class="text-sm text-gray-400 mb-2">建議開設本地銀行帳戶。</p>
+            <p class="text-sm text-gray-400 mb-2">所需文件: 通常需護照、LOA、本地住址證明、本地電話號碼等 (至少兩份 ID)。</p>
+            <p class="text-sm text-gray-400">推薦銀行: CIBC, RBC, Scotiabank, TD, BMO (多有學生優惠方案)。</p>
+            <p class="text-xs text-gray-500 mt-3">*建議先預約開戶時間。</p>
+        </motion.div>
+
+         <motion.div class="bento-item" initial={{ opacity: 0, y: 50 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.5 }} transition={{ duration: 0.5 }}>
+            <i class="fas fa-bus text-tesla-red fa-2x mb-3"></i>
+            <h3 class="text-xl font-semibold mb-2">公共交通</h3>
+            <p class="subtitle-small mb-3">PUBLIC TRANSPORTATION</p>
+            <p class="text-sm text-gray-400 mb-2">系統: TransLink (公車, SkyTrain, SeaBus)。</p>
+            <p class="text-sm text-gray-400 mb-2">交通卡: <strong class="text-white">Compass Card</strong> (可儲值或買月票，押金 CAD 6)。</p>
+            <p class="text-sm text-gray-400 mb-2">使用: 上公車 Tap In；搭 SkyTrain/SeaBus 進出站皆需 Tap。</p>
+            <p class="text-sm text-gray-400">票價: Kaplan 學生通常需購買 <strong class="text-white">成人費率 (Adult Fare)</strong> 月票或使用儲值。</p>
+        </motion.div>
+
+        <motion.div class="bento-item" initial={{ opacity: 0, y: 50 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.5 }} transition={{ duration: 0.5 }}>
+             <i class="fas fa-utensils text-tesla-red fa-2x mb-3"></i>
+            <h3 class="text-xl font-semibold mb-2">飲食與購物</h3>
+            <p class="subtitle-small mb-3">FOOD & SHOPPING</p>
+            <p class="text-sm text-gray-400 mb-2">伙食: 自炊約 CAD 350-450/月；外食一餐約 CAD 20-30+。</p>
+            <p class="text-sm text-gray-400">購物: 市中心 Robson St., Metrotown (搭 SkyTrain)。超市 (Safeway, T&T), 藥妝店 (Shoppers)。</p>
+        </motion.div>
+
+        <motion.div class="bento-item" initial={{ opacity: 0, y: 50 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.5 }} transition={{ duration: 0.5 }}>
+            <i class="fas fa-briefcase-medical text-tesla-red fa-2x mb-3"></i>
+            <h3 class="text-xl font-semibold mb-2">醫療保健</h3>
+            <p class="subtitle-small mb-3">HEALTHCARE</p>
+             <p class="text-sm text-gray-400 mb-2">您已購買 <strong class="text-white">Guard.ME</strong> 醫療保險，保障期間為 <strong class="text-white">2025年6月8日至7月5日</strong>，涵蓋您整個學習期間。</p>
+             <p class="text-sm text-gray-400 mb-2">保險證明 (Certificate of Insurance) 將在您抵達學校時提供，或可提前聯繫 Kaplan 代表索取。</p>
+             <p class="text-sm text-gray-400 mb-2">非緊急諮詢: 撥打 <strong class="text-white">811 (HealthLink BC)</strong>。</p>
+             <p class="text-sm text-gray-400 mb-2">一般就醫: 前往 Walk-in Clinic。</p>
+             <p class="text-sm text-gray-400 mb-2">緊急情況: 前往醫院急診室 (ER) 或撥打 <strong class="text-white">911</strong>。</p>
+             <p class="text-sm text-gray-400">就醫時請出示 Guard.ME 保險卡。</p>
+             <p class="text-xs text-gray-500 mt-3">*由於您的停留時間短且已有全程保險，無需申請 BC MSP。</p>
+        </motion.div>
+
+        <motion.div class="bento-item" initial={{ opacity: 0, y: 50 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.5 }} transition={{ duration: 0.5 }}>
+            <i class="fas fa-users text-tesla-red fa-2x mb-3"></i>
+            <h3 class="text-xl font-semibold mb-2">文化與禮儀</h3>
+            <p class="subtitle-small mb-3">CULTURE & ETIQUETTE</p>
+            <p class="text-sm text-gray-400 mb-2">常用語: Please, Thank you, Sorry。</p>
+            <p class="text-sm text-gray-400 mb-2">問候: 握手、眼神交流。</p>
+            <p class="text-sm text-gray-400 mb-2">個人空間: 保持約一臂距離。</p>
+            <p class="text-sm text-gray-400 mb-2">守時: 非常重要。</p>
+            <p class="text-sm text-gray-400 mb-2">小費: 餐廳/酒吧 (15-20%), 計程車 (10-15%), 理髮等 (10-20%)。</p>
+        </motion.div>
+
+         <motion.div class="bento-item" initial={{ opacity: 0, y: 50 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.5 }} transition={{ duration: 0.5 }}>
+            <i class="fas fa-scroll text-tesla-red fa-2x mb-3"></i>
+            <h3 class="text-xl font-semibold mb-2">Kaplan 行為準則</h3>
+            <p class="subtitle-small mb-3">KAPLAN CODE OF CONDUCT</p>
+            <ul class="list-disc list-inside text-sm text-gray-400 space-y-1">
+                <li>準時出席，遵守指示。</li>
+                <li>課堂多用英語。</li>
+                <li>尊重師生職員，反對霸凌歧視。</li>
+                <li>愛護公物，行為負責。</li>
+                <li>學術誠信，禁止抄襲作弊。</li>
+                <li>遵守校規及住宿規定。</li>
+                <li>校內禁酒禁毒。</li>
+            </ul>
+        </motion.div>
+
+        <motion.div class="bento-item bento-item-large" initial={{ opacity: 0, scale: 0.9 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true, amount: 0.3 }} transition={{ duration: 0.5 }}>
+            <i class="fas fa-shield-alt text-tesla-red icon-large"></i>
+            <h2 class="text-2xl font-bold mb-2">安全重點提醒</h2>
+            <p class="subtitle-small mb-4">SAFETY & SECURITY</p>
+            <div class="line-divider"></div>
+            <p class="text-gray-300">時刻保持警覺，確保人身與財務安全。</p>
+        </motion.div>
+
+        <motion.div class="bento-item bento-item-tall" initial={{ opacity: 0, y: 50 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.5 }} transition={{ duration: 0.5 }}>
+            <i class="fas fa-user-shield text-tesla-red fa-2x mb-3"></i>
+            <h3 class="text-xl font-semibold mb-2">人身安全守則</h3>
+            <p class="subtitle-small mb-3">PERSONAL SAFETY</p>
+            <ul class="list-disc list-inside text-sm text-gray-400 space-y-1">
+                <li>留意周遭，相信直覺。</li>
+                <li>告知行蹤，尤其夜間。</li>
+                <li>財不露白，重要證件妥善保管 (攜帶影本)。</li>
+                <li>避免獨行，勿接受陌生人邀約/飲料/便車。</li>
+                <li>走路不用降噪耳機。</li>
+                <li>勿攜帶武器。</li>
+                <li>遇搶勿反抗，安全第一，大聲呼救。</li>
+                <li>遇行為怪異人士，保持距離離開，勿盯視/拍攝。</li>
+                 <li><strong class="text-white">注意區域:</strong> 市中心東區 (DTES, Main & Hastings 附近) 治安風險較高，經過時需格外警惕。</li>
+                 <li><strong class="text-white">交通安全:</strong> 留意周遭，遇可疑情況向職員報告或簡訊 87-77-77 (非緊急)，緊急撥 911。熟悉 SkyTrain 安全設施 (黃色拉條、對講機等)。晚上9點後搭公車可要求在安全地點下車。</li>
+                 <li><strong class="text-white">防盜防扒:</strong> 看管好財物，使用有拉鍊口袋/斜背包/貼身腰包，錢財證件分開存放。</li>
+                 <li><strong class="text-white">夜生活安全:</strong> 結伴同行，看好飲料，勿過量飲酒，安排安全返家交通。法定飲酒年齡19歲。</li>
+            </ul>
+        </motion.div>
+
+        <motion.div class="bento-item" initial={{ opacity: 0, y: 50 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.5 }} transition={{ duration: 0.5 }}>
+            <i class="fas fa-credit-card text-tesla-red fa-2x mb-3"></i>
+            <h3 class="text-xl font-semibold mb-2">財務安全</h3>
+            <p class="subtitle-small mb-3">FINANCIAL SAFETY</p>
+            <p class="text-sm text-gray-400 mb-2"><strong class="text-white">銀行卡/PIN:</strong> ATM 留意環境，遮擋輸入 PIN，勿告知他人，勿寫下 PIN。</p>
+            <p class="text-sm text-gray-400 mb-2"><strong class="text-white">網路銀行:</strong> 勿分享密碼，定期檢查帳戶，用完登出，避免公用 Wi-Fi/電腦操作。</p>
+        </motion.div>
+
+         <motion.div class="bento-item" initial={{ opacity: 0, y: 50 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.5 }} transition={{ duration: 0.5 }}>
+            <i class="fas fa-user-secret text-tesla-red fa-2x mb-3"></i>
+            <h3 class="text-xl font-semibold mb-2">防範詐騙</h3>
+            <p class="subtitle-small mb-3">SCAM PREVENTION</p>
+            <p class="text-sm text-gray-400 mb-2"><strong class="text-white">釣魚郵件/簡訊:</strong> 警惕偽冒官方機構索取個資/要求付款的訊息，勿點連結，主動查證。</p>
+            <p class="text-sm text-gray-400 mb-2"><strong class="text-white">移民/簽證詐騙:</strong> 警惕自稱官員要求付款否則逮捕/驅逐的電話，立即掛斷。</p>
+            <p class="text-sm text-gray-400 mb-2"><strong class="text-white">虛擬綁架詐騙:</strong> (尤其針對華裔) 警惕脅迫切斷聯繫、拍影片勒索家長的電話，立即聯繫家人並報警。</p>
+            <p class="text-sm text-gray-400">其他: 獎學金、工作、祖父母詐騙等。</p>
+            <p class="text-xs text-gray-500 mt-3">*核心原則：對主動索要金錢/個資的陌生聯繫保持警惕，主動查證。</p>
+        </motion.div>
+
+        <motion.div class="bento-item bento-item-large" initial={{ opacity: 0, y: 50 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.5 }} transition={{ duration: 0.5 }}>
+            <i class="fas fa-phone-alt text-tesla-red fa-2x mb-3"></i>
+            <h3 class="text-xl font-semibold mb-2">緊急應變與求助</h3>
+            <p class="subtitle-small mb-3">EMERGENCY & HELP</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
+                <div>
+                    <p><strong class="text-white">綜合緊急 (警察/消防/救護):</strong> <span class="text-tesla-red font-bold text-lg">911</span></p>
+                    <p><strong class="text-white">Kaplan 學校緊急電話:</strong> +1 (778) 834-7223</p>
+                    <p><strong class="text-white">駐溫哥華台北經文處 (TECO):</strong> 1-604-377-8730 (僅限公民急難)</p>
+                </div>
+                <div>
+                    <p><strong class="text-white">BC 省精神健康支援:</strong> 310-6789 (免區碼)</p>
+                    <p><strong class="text-white">自殺防治危機熱線:</strong> 1-800-784-2433</p>
+                    <p><strong class="text-white">非緊急報案 (VPD):</strong> 604-717-3321</p>
+                    <p><strong class="text-white">加拿大反詐騙中心:</strong> 1-888-495-8501</p>
+                </div>
+            </div>
+             <p class="text-xs text-gray-500 mt-3">*VPD 網站有國際學生安全指南。</p>
+        </motion.div>
+
+        <motion.div class="bento-item" initial={{ opacity: 0, y: 50 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.5 }} transition={{ duration: 0.5 }}>
+            <i class="fas fa-house-damage text-tesla-red fa-2x mb-3"></i>
+            <h3 class="text-xl font-semibold mb-2">天災應變 (地震)</h3>
+            <p class="subtitle-small mb-3">NATURAL DISASTERS (EARTHQUAKE)</p>
+            <p class="text-sm text-gray-400 mb-2">發生時: <strong class="text-white">趴下、掩護、穩住</strong> (Drop, Cover, Hold On)。</p>
+            <p class="text-sm text-gray-400 mb-2">準備: 緊急避難包 (水、食物、急救品、手電筒、現金、文件影本等)、固定高大家具、規劃疏散路線/會合點。</p>
+            <p class="text-xs text-gray-500 mt-3">*溫哥華位於地震帶。</p>
+        </motion.div>
+
+        <motion.div class="bento-item" initial={{ opacity: 0, y: 50 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.5 }} transition={{ duration: 0.5 }}>
+            <i class="fas fa-paw text-tesla-red fa-2x mb-3"></i>
+            <h3 class="text-xl font-semibold mb-2">野生動物安全 (郊狼)</h3>
+            <p class="subtitle-small mb-3">WILDLIFE SAFETY (COYOTES)</p>
+            <p class="text-sm text-gray-400 mb-2">預防: <strong class="text-white">絕對不餵食</strong>，妥善處理垃圾，遛狗繫牽繩。</p>
+            <p class="text-sm text-gray-400 mb-2">遭遇時: 威嚇 (變高大、發出噪音)，<strong class="text-white">切勿轉身逃跑</strong>，緩慢後退。</p>
+            <p class="text-sm text-gray-400">通報異常行為: 1-877-952-7277 (RAPP)。</p>
+            <p class="text-xs text-gray-500 mt-3">*市區公園綠地可能遇到。</p>
+        </motion.div>
+
+        <motion.div class="bento-item bento-item-large" initial={{ opacity: 0, scale: 0.9 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true, amount: 0.3 }} transition={{ duration: 0.5 }}>
+             <i class="fas fa-check-circle text-tesla-red icon-large"></i>
+            <h2 class="text-2xl font-bold mb-2">行前最終檢查</h2>
+            <p class="subtitle-small mb-4">FINAL CHECKLIST</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-2 text-sm text-gray-300">
+                <p><i class="fas fa-check text-tesla-red mr-2"></i>有效護照</p>
+                <p><i class="fas fa-check text-tesla-red mr-2"></i>eTA 核准證明</p>
+                <p><i class="fas fa-check text-tesla-red mr-2"></i>Kaplan LOA</p>
+                <p><i class="fas fa-check text-tesla-red mr-2"></i>Kaplan 訂位確認信</p>
+                <p><i class="fas fa-check text-tesla-red mr-2"></i>Guard.ME 保險確認信</p>
+                <p><i class="fas fa-check text-tesla-red mr-2"></i>財力證明副本</p>
+                <p><i class="fas fa-check text-tesla-red mr-2"></i>來回機票確認單 (CI32/CI31, 訂位56NNOW)</p>
+                <p><i class="fas fa-check text-tesla-red mr-2"></i>學校/TECO/911 緊急聯絡電話</p>
+                <p><i class="fas fa-check text-tesla-red mr-2"></i>少量加幣現金</p>
+                <p><i class="fas fa-check text-tesla-red mr-2"></i>個人常備藥品 (含英文證明)</p>
+                <p><i class="fas fa-check text-tesla-red mr-2"></i>電子產品 & 充電器</p>
+                <p><i class="fas fa-check text-tesla-red mr-2"></i>重要文件影本/電子檔</p>
+            </div>
+        </motion.div>
+
+        <motion.div class="bento-item text-center" initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true, amount: 0.5 }} transition={{ duration: 0.8 }}>
+            <h2 class="text-2xl font-bold mb-2 text-tesla-red">旅途順利</h2>
+            <p class="subtitle-small mb-4">BON VOYAGE</p>
+            <p class="text-gray-300 mb-4">積極體驗，安全學習。保持警覺，遇事求助。</p>
+            <p class="text-lg font-semibold">預祝您在溫哥華收穫滿滿，留下美好回憶！</p>
+            <div class="gradient-overlay"></div>
+        </motion.div>
+
+    </main>
+
+    <footer class="text-center py-8 text-xs text-gray-500">
+        Kaplan International Languages - Vancouver Pre-Departure Guide for Tung-Yen Tsai (Generated: <span id="generation-date"></span>)
+    </footer>
+
+    <script>
+        // Add Framer Motion attributes dynamically if needed, or use inline attributes
+        const motion = window.Motion; // Access Framer Motion
+
+        document.addEventListener('DOMContentLoaded', () => {
+            // Set generation date
+            const generationDateEl = document.getElementById('generation-date');
+            if (generationDateEl) {
+                generationDateEl.textContent = new Date().toLocaleDateString('zh-Hant');
+            }
+
+            // Ensure motion is available before using it
+            if (typeof motion !== 'undefined') {
+                // You can add more complex JS interactions here if needed
+                console.log("Framer Motion loaded.");
+
+                // Apply scroll animations to bento items using class for Framer Motion
+                // This is a conceptual example. Direct attribute usage in HTML is often simpler.
+                // For more complex scenarios, you might iterate and apply animations.
+            } else {
+                console.error("Framer Motion not loaded.");
+            }
+        });
+
+    </script>
+
 </body>
 </html>
