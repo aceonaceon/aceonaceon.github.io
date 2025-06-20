@@ -82,16 +82,6 @@
             opacity: 0.3;
         }
 
-        /* 透明度漸變 */
-        .tesla-red-gradient-bg {
-            background: linear-gradient(45deg, rgba(227, 25, 55, 0.7) 0%, rgba(227, 25, 55, 0.3) 100%);
-        }
-        .tesla-red-gradient-text {
-            background: linear-gradient(45deg, #E31937 30%, #FF6B6B 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
         .section-title {
             font-size: 1.875rem; /* 30px */
             font-weight: 700;
@@ -122,29 +112,11 @@
             left: 0;
             top: 2px;
         }
-
-        .line-graphic {
-            width: 100%;
-            height: 80px;
-            position: relative;
-            margin-top: 1rem;
-        }
-        .line-graphic svg {
-            width: 100%;
-            height: 100%;
-        }
-        .line-graphic path {
-            stroke: #E31937;
-            stroke-width: 2;
-            fill: none;
-            stroke-dasharray: 1000;
-            stroke-dashoffset: 1000;
-        }
         
         .emphasis-visual {
-            font-size: 5rem; /* 調整大小以避免與內容重疊太多 */
+            font-size: 5rem; 
             font-weight: 900;
-            color: rgba(227, 25, 55, 0.10); /* 再調淡一些 */
+            color: rgba(227, 25, 55, 0.10); 
             position: absolute;
             top: 50%;
             left: 50%;
@@ -173,125 +145,198 @@
             <span class="text-tesla-red">劍橋遊學</span>行前說明會
         </h1>
         <p class="text-lg md:text-xl text-gray-300">EC 語言學校學生指南 (Chieh-Ming Yang 同學適用)</p>
-        <p class="english-caption mt-1">CAMBRIDGE STUDY TOUR: EC LANGUAGE SCHOOL STUDENT GUIDE (FOR CHIEH-MING YANG)</p>
+        <p class="english-caption mt-1">CAMBRIDGE STUDY TOUR: FINAL GUIDE (FOR CHIEH-MING YANG)</p>
     </header>
 
     <main class="bento-grid">
-        <div class="bento-item scroll-reveal" style="grid-column: span 2;">
+        <!-- 1. 歡迎 -->
+        <div class="bento-item scroll-reveal" style="grid-column: span 1;">
             <div class="content-wrapper">
                 <div class="emphasis-visual">WELCOME</div>
-                <h2 class="section-title"><i class="fas fa-plane-departure"></i>歡迎展開您的劍橋冒險之旅！</h2>
-                <p class="text-gray-300 mb-4">Chieh-Ming Yang 同學您好，恭喜即將踏上前往英國劍橋的精彩遊學旅程！這不僅是一個提升英語能力的絕佳機會，更是一段豐富個人閱歷、拓展國際視野的難忘體驗。</p>
+                <h2 class="section-title"><i class="fas fa-plane-departure"></i>歡迎！</h2>
+                <p class="text-gray-300 mb-4">Chieh-Ming Yang 同學您好，恭喜即將踏上前往英國劍橋的精彩遊學旅程！</p>
                 <p class="english-caption">Embark on your Cambridge adventure!</p>
             </div>
             <i class="fas fa-user-graduate icon-large"></i>
         </div>
 
-        <div class="bento-item scroll-reveal" style="grid-column: span 3;">
-            <div class="content-wrapper">
-                <div class="emphasis-visual">BOOKING</div>
-                <h2 class="section-title"><i class="fas fa-file-invoice-dollar"></i>您的專屬預訂資訊</h2>
-                <p class="text-gray-300 mb-2">學生姓名 (Student Name): <strong class="text-white">Chieh-Ming Yang</strong></p>
-                <p class="text-gray-300 mb-2">學生編號 (Student Ref.): <strong class="text-white">710196</strong></p>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
-                    <div class="sub-item">
-                        <strong class="text-tesla-red">課程 (Course)</strong>
-                        <p>English Now - For Further Education (20 lessons/week)</p>
-                        <p>日期: 2025年6月30日 (週一) 至 2025年7月25日 (週五)</p>
-                    </div>
-                    <div class="sub-item">
-                        <strong class="text-tesla-red">住宿 (Accommodation)</strong>
-                        <p>寄宿家庭 單人房 (共用衛浴) - 含早餐 (Homestay Single Room, shared bathroom - Bed & Breakfast)</p>
-                        <p>日期: 2025年6月28日 (週六) 至 2025年7月26日 (週六)</p>
-                    </div>
-                    <div class="sub-item">
-                        <strong class="text-tesla-red">抵達與離開 (Arrival & Departure)</strong>
-                        <p>抵達日期: 2025年6月28日 (週六)</p>
-                        <p>離開日期: 2025年7月26日 (週六)</p>
-                    </div>
-                    <div class="sub-item">
-                        <strong class="text-tesla-red">機場接送 (Arrival Transfer)</strong>
-                        <p>已預訂從倫敦希斯洛機場 (LHR) / 聖潘克拉斯火車站 / 倫敦城市機場 (LCY) 的接送服務 (2025年6月28日)</p>
-                    </div>
-                    <div class="sub-item">
-                        <strong class="text-tesla-red">醫療保險 (Insurance)</strong>
-                        <p>Guard.me International Plan Insurance</p>
-                        <p>效期: 2025年6月28日 至 2025年7月26日</p>
-                    </div>
-                </div>
-                <p class="english-caption mt-3">YOUR PERSONALIZED BOOKING DETAILS.</p>
-            </div>
-        </div>
-
-        <div class="bento-item scroll-reveal">
-            <div class="content-wrapper">
-                <h2 class="section-title"><i class="fas fa-city"></i>劍橋城市概覽</h2>
-                <p class="highlight-text-small text-tesla-red">大學城</p>
-                <p class="english-caption mb-2">UNIVERSITY CITY</p>
-                <p class="text-gray-300">聞名遐邇的大學城，歷史悠久、學術頂尖、建築優美、學生氛圍活潑。康河風景如畫，適合步行和騎自行車探索。</p>
-                <div class="line-graphic">
-                    <svg viewBox="0 0 200 80">
-                        <path d="M10 70 Q 50 10, 90 60 T 190 20" class="animated-line"/>
-                    </svg>
-                </div>
-            </div>
-             <i class="fas fa-landmark icon-large"></i>
-        </div>
-
-        <div class="bento-item scroll-reveal">
+        <!-- 2. 學校簡介 -->
+        <div class="bento-item scroll-reveal" style="grid-column: span 2;">
             <div class="content-wrapper">
                 <h2 class="section-title"><i class="fas fa-school"></i>EC 語言學校</h2>
-                <p class="highlight-text-small text-tesla-red">全球知名</p>
-                <p class="english-caption mb-2">GLOBALLY RENOWNED</p>
-                <p class="text-gray-300">致力於提供沉浸式語言學習環境，專業師資，完善學生支援。EC Cambridge 緊急電話: <strong class="text-white">+44 (0) 7342037743</strong>。</p>
+                 <p class="text-gray-300">您即將入讀全球知名的 EC English 語言學校。學校致力於提供沉浸式語言學習環境，擁有專業師資與完善的學生支援服務。</p>
+                <p class="font-bold mt-3 mb-1">重要聯絡資訊:</p>
+                <div class="sub-item text-sm">
+                    <strong class="text-tesla-red">EC Cambridge 緊急電話:</strong>
+                    <p class="text-white">+44 (0) 7342037743</p>
+                </div>
+                <div class="sub-item text-sm mt-2">
+                    <strong class="text-tesla-red">學校地址:</strong>
+                    <p class="text-white">3 Guildhall Chambers, Guildhall Place, Cambridge, CB2 3AE</p>
+                </div>
             </div>
             <i class="fas fa-comments icon-large"></i>
         </div>
+
+        <!-- 行程總覽 -->
+        <div class="bento-item scroll-reveal" style="grid-column: span 3;">
+            <div class="content-wrapper">
+                <div class="emphasis-visual">BOOKING</div>
+                <h2 class="section-title"><i class="fas fa-file-invoice-dollar"></i>您的行程總覽</h2>
+                <p class="text-gray-300 mb-2">學生姓名: <strong class="text-white">Chieh-Ming Yang</strong> | 學生編號: <strong class="text-white">710196</strong> | 訂單號: <strong class="text-white">772402</strong></p>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 text-sm">
+                    <div class="sub-item">
+                        <strong class="text-tesla-red">課程 Course</strong>
+                        <p>English Now - For Further Education (20 lessons/week)</p>
+                        <p>日期: 2025年6月30日 至 7月25日</p>
+                    </div>
+                    <div class="sub-item">
+                        <strong class="text-tesla-red">來回航班 Flights</strong>
+                        <p>去程 (EK367/EK029): 6/28 TPE 23:50 -> 6/29 LHR 14:25 (T3)</p>
+                        <p>回程 (EK002/EK0366): 7/26 LHR 14:25 -> 7/27 TPE 16:15</p>
+                        <p>託運行李: <strong class="text-white">30公斤</strong></p>
+                    </div>
+                    <div class="sub-item">
+                        <strong class="text-tesla-red">機場接送 Arrival Transfer</strong>
+                        <p>已預訂 <strong class="text-white">6月29日</strong> 從 <strong class="text-white">LHR T3</strong> 的接送</p>
+                        <p class="text-xs text-gray-400">司機會持您的名牌在入境大廳等候。</p>
+                    </div>
+                    <div class="sub-item">
+                        <strong class="text-tesla-red">住宿 Accommodation</strong>
+                        <p>寄宿家庭單人房 (含早餐)</p>
+                        <p>入住/退房: 2025年6月29日 至 7月26日</p>
+                    </div>
+                     <div class="sub-item">
+                        <strong class="text-tesla-red">醫療保險 Insurance</strong>
+                        <p>Guard.me International Plan</p>
+                        <p>效期: 2025年6月29日 至 7月26日</p>
+                    </div>
+                    <div class="sub-item">
+                        <strong class="text-tesla-red">費用 Items Paid</strong>
+                        <p>課程費、住宿費、註冊費、材料費、接機費、保險費等均已處理。</p>
+                    </div>
+                </div>
+                <p class="english-caption mt-3">YOUR PERSONALIZED ITINERARY OVERVIEW (FINAL VERSION).</p>
+            </div>
+        </div>
+
+        <!-- 寄宿家庭詳細資料 -->
+        <div class="bento-item scroll-reveal" style="grid-column: span 3;">
+             <div class="content-wrapper">
+                <div class="emphasis-visual">STAY</div>
+                <h2 class="section-title"><i class="fas fa-home"></i>您在劍橋的家：寄宿家庭介紹</h2>
+                <p class="text-gray-300 mb-2">您將入住 <strong class="text-tesla-red">Vicki Kenny</strong> 女士的家，這將是您深入體驗英國文化的好機會。</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
+                    <div class="sub-item">
+                        <strong class="text-tesla-red">地址 & 聯絡方式</strong>
+                        <p>地址: <strong class="text-white">13 Hale Street, Cambridge, CB4 3BZ</strong></p>
+                        <p>電話: <strong class="text-white">+44 7990 571 022</strong></p>
+                        <p>Email: <strong class="text-white">vickikennymusic@gmail.com</strong></p>
+                    </div>
+                     <div class="sub-item">
+                        <strong class="text-tesla-red">關於您的 Host</strong>
+                        <p>Vicki 是一位爵士鋼琴老師與音樂治療師，獨自居住。她喜歡學習義大利語和日本藝術，是位樂於了解不同文化的友善主人。</p>
+                    </div>
+                    <div class="sub-item">
+                        <strong class="text-tesla-red">週邊與交通</strong>
+                        <p>地點位於劍橋市中心區域，生活機能方便。</p>
+                        <ul class="custom-list text-xs text-gray-500 ml-4 mt-1">
+                            <li>步行 5 分鐘至 Jesus Green 公園</li>
+                            <li>步行 15 分鐘至市中心</li>
+                            <li>步行 20 分鐘至 EC 學校</li>
+                            <li>或搭乘 5號/6號公車約 15 分鐘到校 (週票可享學生折扣)</li>
+                        </ul>
+                    </div>
+                    <div class="sub-item">
+                        <strong class="text-tesla-red">房間與規定</strong>
+                        <p>房內有床、書桌、五斗櫃 (無衣櫃)。</p>
+                         <ul class="custom-list text-xs text-gray-500 ml-4 mt-1">
+                            <li>提供 Wi-Fi</li>
+                            <li>家中無寵物</li>
+                            <li>入住期間若有損壞需自行負責</li>
+                        </ul>
+                    </div>
+                </div>
+                <p class="english-caption mt-3">YOUR HOMESTAY PROFILE: VICKI KENNY.</p>
+            </div>
+        </div>
         
+        <!-- NEW: 在地生活指南 -->
+        <div class="bento-item scroll-reveal" style="grid-column: span 3;">
+            <div class="content-wrapper">
+                <div class="emphasis-visual">LOCAL LIFE</div>
+                <h2 class="section-title"><i class="fas fa-map-marked-alt"></i>劍橋在地生活指南</h2>
+                <p class="text-gray-300 mb-3">為了讓您更快融入劍橋，這裡提供一些實用的在地生活資訊。</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div class="sub-item">
+                        <strong class="text-tesla-red"><i class="fas fa-sun mr-1"></i> 七月氣溫與穿搭</strong>
+                        <p class="text-sm text-gray-400">劍橋的七月氣候溫和，但天氣多變。平均溫度約 <strong class="text-white">12°C 至 22°C</strong>。</p>
+                        <ul class="custom-list text-xs text-gray-500 ml-4 mt-1">
+                            <li>建議採「洋蔥式」穿搭，方便隨時增減衣物。</li>
+                            <li>白天可穿短袖，但務必隨身攜帶一件薄外套或毛衣。</li>
+                            <li>防水外套與雨傘是必備品，以應對突如其來的陣雨。</li>
+                            <li>準備一雙舒適好走的鞋子，因為您會有很多步行的機會。</li>
+                        </ul>
+                    </div>
+                    <div class="sub-item">
+                        <strong class="text-tesla-red"><i class="fas fa-bus-alt mr-1"></i> 市內交通指南</strong>
+                        <p class="text-sm text-gray-400">劍橋市區不大，交通十分便利。</p>
+                        <ul class="custom-list text-xs text-gray-500 ml-4 mt-1">
+                            <li><strong>步行:</strong> 從您的住處到學校約20分鐘，是探索市中心的最佳方式。</li>
+                            <li><strong>自行車:</strong> 這是劍橋最受歡迎的交通工具。您可以在市區租借，感受當地生活。</li>
+                            <li><strong>公車 (Bus):</strong> 主要由 Stagecoach 營運。從您住處可搭乘5號或6號公車。建議購買週票 (weekly ticket)，並出示EC學生證詢問學生折扣。</li>
+                        </ul>
+                    </div>
+                     <div class="sub-item">
+                        <strong class="text-tesla-red"><i class="fas fa-utensils mr-1"></i> 美食探索</strong>
+                        <p class="text-sm text-gray-400">劍橋有各式各樣的餐飲選擇，滿足不同預算。</p>
+                        <ul class="custom-list text-xs text-gray-500 ml-4 mt-1">
+                            <li><strong>學校附近 (市中心):</strong> 可以在 <strong class="text-white">Market Square (市集廣場)</strong> 找到各國街頭小吃，經濟實惠。周邊巷弄有許多傳統英式酒館 (Pubs)、咖啡廳和餐廳。</li>
+                            <li><strong>住宿附近 (CB4):</strong> 您居住的區域本身就有很多餐廳和咖啡廳，非常方便。</li>
+                            <li><strong>省錢秘訣:</strong> 到 <strong class="text-white">Aldi</strong> 或 <strong class="text-white">Lidl</strong> 等平價超市購買食材，若有機會使用廚房可大大節省開銷。</li>
+                        </ul>
+                    </div>
+                     <div class="sub-item">
+                        <strong class="text-tesla-red"><i class="fas fa-map-signs mr-1"></i> 週末好去處</strong>
+                        <p class="text-sm text-gray-400">課餘時間，劍橋及其周邊有許多值得探索的地方。</p>
+                        <ul class="custom-list text-xs text-gray-500 ml-4 mt-1">
+                            <li><strong>劍橋市內:</strong> <strong class="text-white">康河撐篙 (Punting)</strong> 是必體驗的活動。參觀國王學院禮拜堂 (King's College Chapel)、費茲威廉博物館 (Fitzwilliam Museum)。</li>
+                            <li><strong>近郊散步:</strong> 沿著康河漫步至 <strong class="text-white">Grantchester</strong> 村莊，在果園裡喝杯下午茶。</li>
+                            <li><strong>一日遊 (Day Trip):</strong> 搭乘火車前往 <strong class="text-white">伊利 (Ely)</strong>，參觀宏偉的伊利大教堂 (約20分鐘車程)。若時間充裕，也可安排前往 <strong class="text-white">倫敦</strong> 的一日遊 (約50-90分鐘車程)。</li>
+                        </ul>
+                    </div>
+                </div>
+                <p class="english-caption mt-3">A GUIDE TO LOCAL LIFE IN CAMBRIDGE.</p>
+            </div>
+        </div>
+
+        <!-- 行前重要準備：MyEC -->
         <div class="bento-item scroll-reveal" style="grid-column: span 3;">
             <div class="content-wrapper">
                 <div class="emphasis-visual">PREPARE</div>
-                <h2 class="section-title"><i class="fas fa-tasks"></i>行前重要準備：MyEC & Microsoft Teams</h2>
-                <p class="text-gray-300 mb-3">為了讓您的學習之旅更順暢，請務必在出發前完成以下準備：</p>
+                <h2 class="section-title"><i class="fas fa-tasks"></i>行前重要準備：MyEC 學生平台</h2>
+                <p class="text-gray-300 mb-3">請務必在 <strong class="text-tesla-red">出發前 2-6 週</strong> 登入 MyEC 學生平台，完成線上英語分級測驗。</p>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div class="sub-item">
-                        <strong class="text-tesla-red"><i class="fab fa-microsoft mr-1"></i> Microsoft Teams 設定</strong>
-                        <p class="text-sm text-gray-400">您將透過 MS Teams 與學校和老師聯繫。您的帳戶將於課程開始前14天啟用。</p>
-                        <p class="text-sm text-gray-400 mt-1">登入帳號 (Username): <strong class="text-white">710196@ecenglish.online</strong></p>
-                        <p class="text-sm text-gray-400">預設密碼 (Password): <strong class="text-white">Learn123</strong> (登入後建議修改)</p>
-                        <p class="text-xs text-gray-500 mt-1">請務必使用EC提供的帳號登入，勿使用個人Email註冊。</p>
+                        <strong class="text-tesla-red"><i class="fas fa-user-check mr-1"></i> MyEC 啟用方式</strong>
+                        <p class="text-sm text-gray-400 mt-1"><strong>電腦版:</strong> 使用學生編號 <strong class="text-white">710196</strong> 及生日 <strong class="text-white">2004/11/03</strong> 透過學校信件連結啟用。</p>
+                        <p class="text-sm text-gray-400 mt-1"><strong>手機App:</strong> 帳號及密碼均使用 <strong class="text-white">ecenglish710196</strong>，首次登入後重設密碼。</p>
                     </div>
                     <div class="sub-item">
-                        <strong class="text-tesla-red"><i class="fas fa-user-check mr-1"></i> MyEC 學生平台 (MyEC Portal)</strong>
-                        <p class="text-sm text-gray-400">MyEC是您的個人化學習入口，您可以在此：</p>
-                        <ul class="custom-list text-xs text-gray-500 ml-4 mt-1">
-                            <li>進行英語分級測驗 (Placement Test - 45分鐘，含寫作)</li>
-                            <li>填寫學生個人資料表 (Student Personal Details Form)</li>
-                            <li>完成學習需求分析 (Needs Analysis)</li>
-                            <li>預習課程、認識城市與學校員工</li>
-                            <li>追蹤學習進度</li>
+                        <strong class="text-tesla-red"><i class="fas fa-list-check mr-1"></i> MyEC 待辦事項</strong>
+                        <ul class="custom-list text-sm text-gray-400">
+                           <li>完成45分鐘的英語分級測驗 (請獨立作答，勿使用翻譯或AI)</li>
+                           <li>填寫個人資料與學習需求分析</li>
+                           <li><strong class="text-white">注意:</strong> 開課前一週，您會收到學校寄送關於「新生說明會」與「週日歡迎活動」的詳細資訊。</li>
                         </ul>
-                        <p class="text-sm text-gray-400 mt-2"><strong>電腦版啟用:</strong> 使用您的學生編號 <strong class="text-white">710196</strong> 及生日 <strong class="text-white">2004年11月3日</strong> 透過學校提供的連結啟用帳戶。</p>
-                        <p class="text-sm text-gray-400 mt-1"><strong>手機/平板App:</strong> 下載App後，帳號及密碼均使用 <strong class="text-white">ecenglish710196</strong>，首次登入後請重設密碼。</p>
-                         <p class="text-xs text-gray-500 mt-1">若無法順利登入或操作，可於抵校後進行測驗。</p>
                     </div>
                 </div>
-                <p class="english-caption mt-3">IMPORTANT PRE-ARRIVAL SETUP FOR MYEC & MS TEAMS.</p>
+                <p class="english-caption mt-3">IMPORTANT: COMPLETE YOUR PLACEMENT TEST ON MYEC 2-6 WEEKS BEFORE ARRIVAL.</p>
             </div>
         </div>
 
-
+        <!-- 英國入境與簽證 -->
         <div class="bento-item scroll-reveal" style="grid-column: span 2;">
-            <div class="content-wrapper">
-                <div class="emphasis-visual">FLIGHT</div>
-                <h2 class="section-title"><i class="fas fa-plane"></i>前往劍橋的旅程規劃：航班</h2>
-                <p class="text-gray-300 mb-2">從台北 (TPE) 飛往倫敦，常見降落機場包括希斯洛 (LHR)、蓋威克 (LGW)、史坦斯特 (STN)。您的預訂包含 <strong class="text-tesla-red">機場接送</strong>，請確認接送詳情。</p>
-                <p class="text-gray-300 mt-3">一般而言，票價隨季節、預訂時間和航空公司而變動極大。建議務必提前預訂以獲得較優惠的價格。</p>
-            </div>
-             <i class="fas fa-map-marked-alt icon-large"></i>
-        </div>
-
-        <div class="bento-item scroll-reveal" style="grid-column: span 1;">
             <div class="content-wrapper">
                  <h2 class="section-title"><i class="fas fa-passport"></i>英國入境與簽證</h2>
                 <p class="text-gray-300 mb-2">持台灣護照進行短期學習 (少於6個月)，適用 <strong class="text-tesla-red">標準訪客</strong> 途徑，<strong class="text-tesla-red">無需</strong> 事先申請簽證。您將在抵達英國邊境時申請入境。</p>
@@ -301,232 +346,28 @@
                     <li>有效護照 (效期涵蓋全程)</li>
                     <li>EC 入學許可信 (Booking Confirmation)</li>
                     <li>財力證明 (英文版銀行存款證明等)</li>
-                    <li>住宿證明 (EC提供，如寄宿家庭資訊)</li>
-                    <li>返程/離境機票證明</li>
-                    <li>旅遊醫療保險證明 (如Guard.me保單)</li>
+                    <li>住宿證明 (Homestay Profile)</li>
+                    <li>來回電子機票 (eTicket)</li>
+                    <li>旅遊醫療保險證明 (Guard.me保單)</li>
                 </ul>
-                <p class="text-xs text-gray-500 mt-2">注意：英國ETA系統目前不含台灣短期學習者，但出發前務必再次透過英國政府官網確認最新規定。</p>
             </div>
             <i class="fas fa-stamp icon-large"></i>
         </div>
-        
-        <div class="bento-item scroll-reveal" style="grid-column: span 2;">
-            <div class="content-wrapper">
-                <div class="emphasis-visual">TRANSPORT</div>
-                <h2 class="section-title"><i class="fas fa-bus-alt"></i>機場交通：倫敦機場 <i class="fas fa-arrow-right mx-2"></i> 劍橋</h2>
-                <p class="text-gray-300 mb-3">您已預訂機場接送。若自行安排，主要方式有客運巴士 (National Express) 和火車 (Train)。</p>
-                <div class="mb-4">
-                    <canvas id="transportChart"></canvas>
-                </div>
-                <p class="text-sm text-gray-400">
-                    <strong class="text-tesla-red">STN (史坦斯特機場)</strong> 通常是往返劍橋最便捷的機場選擇。
-                </p>
-                <p class="english-caption">AIRPORT TRANSPORT: LONDON TO CAMBRIDGE. STN IS GENERALLY MOST CONVENIENT.</p>
-            </div>
-        </div>
 
-        <div class="bento-item scroll-reveal">
-            <div class="content-wrapper">
-                <h2 class="section-title"><i class="fas fa-map-marker-alt"></i>EC 劍橋學校位置</h2>
-                <p class="highlight-text-small text-tesla-red">市中心</p>
-                <p class="english-caption mb-2">CITY CENTRE LOCATION</p>
-                <p class="text-gray-300 text-sm">地址: 3 Guildhall Chambers, Guildhall Place, Cambridge CB2 3AE, UK.</p>
-                <p class="font-bold mt-3 mb-1">設施：</p>
-                <ul class="custom-list text-sm text-gray-400">
-                    <li>現代化教室 (互動電視)</li>
-                    <li>學生休息室、圖書館</li>
-                    <li>免費 Wi-Fi、電腦</li>
-                </ul>
-            </div>
-            <i class="fas fa-wifi icon-large"></i>
-        </div>
-
-        <div class="bento-item scroll-reveal" style="grid-column: span 2;">
-            <div class="content-wrapper">
-                <div class="emphasis-visual">COURSES</div>
-                <h2 class="section-title"><i class="fas fa-book-open"></i>您的英語課程</h2>
-                 <div class="sub-item mb-3">
-                    <strong class="text-tesla-red">您已預訂：English Now - For Further Education (每週20堂課)</strong>
-                    <p class="text-gray-400 text-sm">此課程專為希望提升學術英語能力的學生設計，幫助您為未來升學做好準備。課程著重於批判性思維、學術寫作與口語表達等21世紀關鍵技能，並採用小班制教學。</p>
-                    <p class="text-gray-400 text-sm">課程材料費 (Course Material Fee) 已包含在您的預訂中。</p>
-                </div>
-                <p class="text-gray-300 text-sm">EC亦提供多種其他英語課程，如一般英語、考試準備課程等，滿足不同學習需求。</p>
-                <p class="english-caption mt-3">YOUR COURSE: ENGLISH NOW - FOR FURTHER EDUCATION. EC OFFERS OTHER COURSES TOO.</p>
-            </div>
-        </div>
-        
-        <div class="bento-item scroll-reveal" style="grid-column: span 3;">
-             <div class="content-wrapper">
-                <div class="emphasis-visual">STAY</div>
-                <h2 class="section-title"><i class="fas fa-home"></i>您在劍橋的家：寄宿家庭</h2>
-                <p class="text-gray-300 mb-2">您已預訂 <strong class="text-tesla-red">寄宿家庭單人房 (含早餐，共用衛浴)</strong>。這是深入體驗英國文化和日常生活的絕佳方式。</p>
-                <p class="english-caption mb-2">YOUR ACCOMMODATION: HOMESTAY SINGLE ROOM (B&B, SHARED BATHROOM)</p>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
-                    <div class="sub-item">
-                        <strong class="text-tesla-red">寄宿家庭特色</strong>
-                        <ul class="custom-list text-gray-400">
-                            <li>與當地家庭同住，練習英語。</li>
-                            <li>體驗英式生活文化。</li>
-                            <li>通常提供床單、毛巾，每週可洗衣一次。</li>
-                            <li>通常有網路。</li>
-                        </ul>
-                    </div>
-                     <div class="sub-item">
-                        <strong class="text-tesla-red">注意事項</strong>
-                        <ul class="custom-list text-gray-400">
-                            <li>尊重寄宿家庭的生活習慣與規定。</li>
-                            <li>通勤至學校時間可能需30-60分鐘巴士。</li>
-                            <li>若有特殊飲食需求，請務必提前告知學校。</li>
-                            <li>住宿安排費 (Accommodation Placement Fee) 已包含在您的預訂中。</li>
-                        </ul>
-                    </div>
-                </div>
-                <p class="text-gray-300 mt-3 text-sm">EC 也提供學生宿舍等其他住宿類型給不同需求的學生。您的住宿日期為 <strong class="text-white">2025年6月28日至7月26日</strong>。</p>
-                <p class="text-xs text-gray-500 mt-2">請留意EC的住宿取消政策。若需更改，請儘早通知學校。</p>
-            </div>
-        </div>
-
-        <div class="bento-item scroll-reveal" style="grid-column: span 2;">
-            <div class="content-wrapper">
-                <div class="emphasis-visual">MONEY</div>
-                <h2 class="section-title"><i class="fas fa-pound-sign"></i>關於金錢：貨幣與預算</h2>
-                <p class="text-gray-300 mb-2">英國貨幣：英鎊 (£, GBP)。建議在台換少量現鈔，抵英後可考慮使用數位銀行 (Monzo, Revolut) 或預付外幣卡。</p>
-                <p class="font-bold mt-3 mb-1 text-tesla-red">每月預估生活費 (不含您已預付的學費、住宿費、課程材料費、保險費等):</p>
-                <p class="highlight-text-medium">£400 - £800+</p>
-                <p class="english-caption">ESTIMATED MONTHLY PERSONAL EXPENSES (EXCL. PRE-PAID ITEMS)</p>
-                <p class="text-sm text-gray-400 mt-2">此預算主要用於食物 (午晚餐及週末)、本地交通、個人用品、社交娛樂等。您的早餐已由寄宿家庭提供。</p>
-                 <div class="line-graphic">
-                    <svg viewBox="0 0 200 80">
-                        <path d="M10 40 C 40 10, 60 70, 100 40 S 150 10, 190 50" class="animated-line"/>
-                    </svg>
-                </div>
-            </div>
-        </div>
-
-        <div class="bento-item scroll-reveal">
-            <div class="content-wrapper">
-                <h2 class="section-title"><i class="fas fa-bicycle"></i>劍橋市內交通</h2>
-                <p class="highlight-text-small text-tesla-red">步行 & 自行車</p>
-                <p class="english-caption mb-2">WALKING & CYCLING ARE KEY</p>
-                <p class="text-gray-300 text-sm">劍橋市區不大，自行車是當地最受歡迎的方式 (>80英里自行車道)。</p>
-                <p class="font-bold mt-3 mb-1">巴士 (Stagecoach):</p>
-                <ul class="custom-list text-sm text-gray-400">
-                    <li>單程約 £2.80</li>
-                    <li>週票約 £22</li>
-                    <li>月票約 £50-£80</li>
-                </ul>
-            </div>
-            <i class="fas fa-bus icon-large"></i>
-        </div>
-
+        <!-- 打包清單 -->
         <div class="bento-item scroll-reveal" style="grid-column: span 1;">
             <div class="content-wrapper">
-                <h2 class="section-title"><i class="fas fa-heartbeat"></i>健康與保險</h2>
-                <p class="text-gray-300 mb-2">您已預訂 <strong class="text-tesla-red">Guard.me 國際學生醫療保險</strong>。請隨身攜帶保險證明文件。</p>
-                <p class="english-caption mb-2">YOUR GUARD.ME INSURANCE IS BOOKED.</p>
-                <p class="text-sm text-gray-400">全面的旅遊醫療保險極其重要。短期學生通常無法免費使用NHS (除急診A&E服務外，其他需付費)。</p>
-            </div>
-            <i class="fas fa-file-medical-alt icon-large"></i>
-        </div>
-
-        <div class="bento-item scroll-reveal">
-            <div class="content-wrapper">
-                <h2 class="section-title"><i class="fas fa-plug"></i>電力與轉接頭</h2>
-                <p class="text-gray-300 mb-2">英國電壓 <strong class="text-tesla-red">230V, 50Hz</strong>。插座為 <strong class="text-tesla-red">G 型</strong> (三長方插腳)。</p>
-                <p class="english-caption mb-2">UK VOLTAGE: 230V, 50HZ. TYPE G PLUG.</p>
-                <p class="text-sm text-gray-400">務必攜帶 <strong class="text-white">G 型旅行轉接頭</strong>。檢查電器是否為國際電壓 (100-240V)，否則需 <strong class="text-white">變壓器</strong>。</p>
-            </div>
-            <i class="fas fa-bolt icon-large"></i>
-        </div>
-        
-        <div class="bento-item scroll-reveal" style="grid-column: span 2;">
-            <div class="content-wrapper">
-                <div class="emphasis-visual">MANNERS</div>
-                <h2 class="section-title"><i class="fas fa-handshake"></i>融入英國：文化與禮儀</h2>
-                <ul class="custom-list text-sm text-gray-300 grid grid-cols-1 md:grid-cols-2 gap-x-4">
-                    <li>禮貌用語: "Please", "Thank you", "Sorry" 常掛嘴邊。</li>
-                    <li>守時: 非常重要。</li>
-                    <li>排隊: 必須遵守。</li>
-                    <li>個人空間: 保持距離。</li>
-                    <li>閒聊 (Small Talk): 以天氣等開啟對話。</li>
-                    <li>英式幽默: 自嘲、諷刺。</li>
-                    <li>小費: 非強制，餐廳約10-15%。</li>
-                </ul>
-                <p class="english-caption mt-3">CULTURE & ETIQUETTE: POLITENESS, PUNCTUALITY, QUEUING.</p>
-            </div>
-        </div>
-
-        <div class="bento-item scroll-reveal" style="grid-column: span 3;">
-            <div class="content-wrapper">
-                <div class="emphasis-visual">EXPLORE</div>
-                <h2 class="section-title"><i class="fas fa-binoculars"></i>探索劍橋及周邊</h2>
-                 <p class="text-gray-300 mb-3">劍橋充滿歷史與學術氛圍，值得細細品味。</p>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
-                    <div>
-                        <strong class="text-tesla-red"><i class="fas fa-university mr-1"></i>大學校園</strong>
-                        <p class="text-gray-400">國王學院禮拜堂、各學院、康河撐篙 (Punting)。</p>
-                    </div>
-                    <div>
-                        <strong class="text-tesla-red"><i class="fas fa-landmark mr-1"></i>博物館</strong>
-                        <p class="text-gray-400">費茲威廉博物館、考古學、動物學博物館等。</p>
-                    </div>
-                    <div>
-                        <strong class="text-tesla-red"><i class="fas fa-tree mr-1"></i>其他景點</strong>
-                        <p class="text-gray-400">植物園、市集廣場、聖母瑪利亞大學教堂。</p>
-                    </div>
-                </div>
-                <p class="font-bold mt-4 mb-1 text-tesla-red">學生折扣 (TOTUM 卡):</p>
-                <p class="text-sm text-gray-400">可考慮申辦TOTUM卡，在眾多商店、餐廳享有優惠。消費時可主動詢問店家學生折扣。</p>
-                <p class="english-caption mt-3">CAMBRIDGE ATTRACTIONS: COLLEGES, MUSEUMS, PUNTING, BOTANIC GARDEN.</p>
-            </div>
-        </div>
-
-        <div class="bento-item scroll-reveal">
-            <div class="content-wrapper">
-                <h2 class="section-title"><i class="fas fa-shield-alt"></i>安全須知與重要聯絡</h2>
-                <p class="highlight-text-large text-tesla-red">999</p>
-                <p class="english-caption mb-1">英國緊急求助 (警察/救護車/消防)</p>
-                <p class="text-gray-300 text-sm mb-2">非緊急報警：<strong class="text-white">101</strong>。</p>
-                <div class="sub-item text-sm">
-                    <strong class="text-tesla-red">EC Cambridge 緊急聯絡:</strong>
-                    <p class="text-white">+44 (0) 7342037743</p>
-                </div>
-                <div class="sub-item text-sm mt-2">
-                    <strong class="text-tesla-red">駐英國台北代表處 (倫敦):</strong>
-                    <p>電話: (020) 7881 2650</p>
-                    <p>旅英國人急難救助: 07768 938 765</p>
-                </div>
-            </div>
-            <i class="fas fa-phone-volume icon-large"></i>
-        </div>
-
-        <div class="bento-item scroll-reveal" style="grid-column: span 2;">
-            <div class="content-wrapper">
                 <div class="emphasis-visual">PACK</div>
-                <h2 class="section-title"><i class="fas fa-suitcase-rolling"></i>最後準備：打包清單建議</h2>
-                <p class="text-gray-300 mb-2">英國天氣多變，採 <strong class="text-tesla-red">洋蔥式穿搭</strong>。預留行李空間。</p>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-x-4 text-sm">
-                    <div>
-                        <strong class="text-white">必備物品：</strong>
-                        <ul class="custom-list text-gray-400">
-                            <li>重要文件 (護照、EC入學信/預訂確認函、財力證明、住宿證明、回程機票、保險證明)</li>
-                            <li>防水外套、保暖衣物</li>
-                            <li>舒適鞋子、一套正式場合服裝</li>
-                            <li>手機、筆電、G型轉接頭 (及變壓器若需要)</li>
-                            <li>個人處方藥 (備足份量+英文處方箋)</li>
-                            <li>少量英鎊現金、信用卡/提款卡</li>
-                        </ul>
-                    </div>
-                    <div>
-                        <strong class="text-white">建議攜帶：</strong>
-                        <ul class="custom-list text-gray-400">
-                            <li>雨靴、圍巾手套 (秋冬)</li>
-                            <li>相機、行動電源</li>
-                            <li>雨傘、可重複用之水瓶、後背包</li>
-                        </ul>
-                    </div>
-                </div>
-                <p class="english-caption mt-3">PACKING LIST: LAYERS ARE KEY FOR UK WEATHER.</p>
+                <h2 class="section-title"><i class="fas fa-suitcase-rolling"></i>打包清單</h2>
+                 <strong class="text-white">重要文件 (隨身)：</strong>
+                <ul class="custom-list text-sm text-gray-400">
+                    <li>護照、EC入學信、住宿證明、來回機票、保險單、財力證明</li>
+                </ul>
+                <strong class="text-white mt-2 inline-block">衣物與用品：</strong>
+                <ul class="custom-list text-sm text-gray-400">
+                   <li>防水外套、保暖衣物、舒適鞋子</li>
+                   <li>G型轉接頭、個人藥品、雨傘</li>
+                </ul>
             </div>
         </div>
 
@@ -554,7 +395,7 @@
                                 if (entry.isIntersecting) {
                                     framerAnimate(el,
                                         { opacity: 1, y: 0 },
-                                        { duration: 0.6, ease: "easeOut", delay: index * 0.05 } // Reduced delay slightly
+                                        { duration: 0.6, ease: "easeOut", delay: index * 0.05 }
                                     );
                                     observer.unobserve(el);
                                 }
@@ -569,89 +410,6 @@
                 document.querySelectorAll('.scroll-reveal').forEach(el => {
                     el.style.opacity = 1;
                     el.style.transform = 'translateY(0px)';
-                });
-            }
-
-            const animatedLines = document.querySelectorAll('.animated-line');
-            animatedLines.forEach(line => {
-                const observer = new IntersectionObserver(entries => {
-                    entries.forEach(entry => {
-                        if (entry.isIntersecting) {
-                            line.style.transition = 'stroke-dashoffset 2s ease-out';
-                            line.style.strokeDashoffset = '0';
-                            observer.unobserve(line);
-                        }
-                    });
-                }, { threshold: 0.5 });
-                observer.observe(line);
-            });
-
-            const transportCtx = document.getElementById('transportChart');
-            if (transportCtx) {
-                new Chart(transportCtx, {
-                    type: 'bar',
-                    data: {
-                        labels: ['LHR (巴士)', 'LHR (火車)', 'LGW (巴士)', 'LGW (火車)', 'STN (巴士)', 'STN (火車)'],
-                        datasets: [{
-                            label: '預估時間 (分鐘)',
-                            data: [150, 145, 255, 115, 50, 32], 
-                            backgroundColor: [
-                                'rgba(227, 25, 55, 0.5)',
-                                'rgba(227, 25, 55, 0.4)',
-                                'rgba(227, 25, 55, 0.3)',
-                                'rgba(227, 25, 55, 0.6)',
-                                'rgba(227, 25, 55, 0.8)',
-                                'rgba(227, 25, 55, 0.9)'
-                            ],
-                            borderColor: '#E31937',
-                            borderWidth: 1
-                        },
-                        {
-                            label: '預估費用 (£起)',
-                            data: [19, 25, 30, 30, 14, 9.5],
-                            backgroundColor: [
-                                'rgba(150, 150, 150, 0.5)',
-                                'rgba(150, 150, 150, 0.4)',
-                                'rgba(150, 150, 150, 0.3)',
-                                'rgba(150, 150, 150, 0.6)',
-                                'rgba(150, 150, 150, 0.8)',
-                                'rgba(150, 150, 150, 0.9)'
-                            ],
-                            borderColor: '#888888',
-                            borderWidth: 1,
-                            yAxisID: 'y1' 
-                        }
-                    ]
-                    },
-                    options: {
-                        responsive: true,
-                        maintainAspectRatio: false,
-                        scales: {
-                            y: {
-                                beginAtZero: true,
-                                title: { display: true, text: '時間 (分鐘)', color: '#FFFFFF' },
-                                ticks: { color: '#CCCCCC' },
-                                grid: { color: 'rgba(255,255,255,0.1)'}
-                            },
-                            y1: { 
-                                beginAtZero: true,
-                                position: 'right',
-                                title: { display: true, text: '費用 (£)', color: '#FFFFFF' },
-                                ticks: { color: '#CCCCCC' },
-                                grid: { drawOnChartArea: false } 
-                            }
-                        },
-                        plugins: {
-                            legend: {
-                                labels: { color: '#FFFFFF' }
-                            },
-                            tooltip: {
-                                titleColor: '#FFFFFF',
-                                bodyColor: '#DDDDDD',
-                                backgroundColor: 'rgba(0,0,0,0.8)',
-                            }
-                        }
-                    }
                 });
             }
         });
