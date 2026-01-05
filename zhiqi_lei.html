@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zhiqi Lei - 愛爾蘭 Cork 行前全攻略 (CEC)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+    <!-- Map Icon Library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+    
+    <!-- Chosen Palette: "Cork Harbour Deep" 
+         Background: Warm Neutral (bg-stone-50)
+         Primary: Emerald Green (text-emerald-800) - Ireland/Nature
+         Secondary: Slate Blue (text-slate-800) - Reliability
+         Alert: Rose/Amber - Warnings & Action Items
+    -->
+
+    <style>
+        /* Chart Container Styling Rules */
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 300px;
+            max-height: 400px;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 350px;
+            }
+        }
+        
+        /* Custom scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #f1f1f1; }
+        ::-webkit-scrollbar-thumb { background: #059669; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #047857; }
+
+        .tab-active {
+            border-bottom: 3px solid #059669;
+            color: #065f46;
+            background-color: #ecfdf5;
+            font-weight: 700;
+        }
+        .tab-inactive {
+            color: #64748b;
+            background-color: white;
+        }
+        .tab-inactive:hover {
+            color: #059669;
+            background-color: #f0fdf4;
+        }
+
+        /* Detail Box Styles */
+        .detail-box {
+            border-left: 4px solid #059669;
+            background-color: #ffffff;
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            margin-bottom: 1rem;
+        }
+        
+        .tip-box {
+            background-color: #eff6ff; /* blue-50 */
+            border: 1px solid #bfdbfe;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            font-size: 0.9rem;
+            color: #1e40af;
+        }
+
+        .map-placeholder {
+            background-color: #e5e7eb;
+            background-image: radial-gradient(#d1d5db 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+    </style>
+</head>
+<body class="bg-stone-50 text-slate-800 font-sans antialiased">
+
+    <!-- Header -->
+    <header class="bg-white shadow-sm sticky top-0 z-50 border-b border-emerald-100">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <div class="bg-emerald-800 text-white font-bold text-xl px-3 py-1 rounded mr-3">CEC</div>
+                    <div class="leading-tight">
+                        <h1 class="text-lg font-bold text-slate-800">愛爾蘭遊學行前全攻略</h1>
+                        <p class="text-xs text-slate-500">For: Ms. Zhiqi Lei | Destination: Cork</p>
+                    </div>
+                </div>
+                <div class="hidden md:block text-right">
+                    <div class="text-sm font-bold text-emerald-700">離出發日 2026/03/01</div>
+                    <div class="text-xs text-slate-400">請詳閱所有分頁資訊</div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+
+        <!-- Welcome Message -->
+        <section class="mb-8 bg-gradient-to-r from-emerald-600 to-teal-600 rounded-xl shadow-lg p-6 text-white relative overflow-hidden">
+            <div class="relative z-10">
+                <h2 class="text-2xl font-bold mb-2">👋 Hi, Zhiqi! 準備好前往 Cork 了嗎？</h2>
+                <p class="text-emerald-50 leading-relaxed max-w-3xl">
+                    這份網頁是妳的「行前懶人包」。我們根據學校文件與官網資訊整理了妳需要知道的所有細節：從打包行李、抵達當天的交通，到最讓人頭痛的辦理 IRP 簽證與當地租房攻略。
+                    <br><br>
+                    <strong>請務必把這頁加到書籤，隨時回來查看！</strong> 只要按部就班，妳的 25+8 打工遊學生活就會非常順利。
+                </p>
+            </div>
+            <!-- Decorative circle -->
+            <div class="absolute -right-10 -bottom-20 w-64 h-64 bg-white opacity-10 rounded-full"></div>
+        </section>
+
+        <!-- Navigation Tabs -->
+        <div class="flex overflow-x-auto space-x-2 mb-6 pb-2" role="tablist">
+            <button onclick="switchTab('overview')" id="tab-overview" class="tab-active flex-1 py-3 px-4 rounded-t-lg min-w-[120px] text-center border transition-all shadow-sm">
+                📅 行程總覽
+            </button>
+            <button onclick="switchTab('prep')" id="tab-prep" class="tab-inactive flex-1 py-3 px-4 rounded-t-lg min-w-[120px] text-center border transition-all shadow-sm">
+                🧳 必備與打包
+            </button>
+            <button onclick="switchTab('arrival')" id="tab-arrival" class="tab-inactive flex-1 py-3 px-4 rounded-t-lg min-w-[120px] text-center border transition-all shadow-sm">
+                ✈️ 落地與住宿
+            </button>
+            <button onclick="switchTab('visa')" id="tab-visa" class="tab-inactive flex-1 py-3 px-4 rounded-t-lg min-w-[120px] text-center border transition-all shadow-sm">
+                🎓 課程與簽證
+            </button>
+            <button onclick="switchTab('life')" id="tab-life" class="tab-inactive flex-1 py-3 px-4 rounded-t-lg min-w-[120px] text-center border transition-all shadow-sm">
+                ☘️ 生活與租房
+            </button>
+        </div>
+
+        <!-- Content Area -->
+        <div id="content-area" class="min-h-[500px]">
+
+            <!-- TAB 1: OVERVIEW -->
+            <div id="view-overview" class="space-y-6 animate-fade-in">
+                
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                    <!-- Critical Dates Card -->
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-slate-100 col-span-1 lg:col-span-1">
+                        <h3 class="text-lg font-bold text-slate-800 mb-4 border-b pb-2">📌 關鍵日期 (Key Dates)</h3>
+                        <ul class="space-y-4 text-sm">
+                            <li class="flex justify-between">
+                                <span class="text-slate-500">抵達愛爾蘭</span>
+                                <span class="font-bold text-emerald-700">01 Mar 2026</span>
+                            </li>
+                            <li class="flex justify-between">
+                                <span class="text-slate-500">開學日 (Start)</span>
+                                <span class="font-bold text-slate-800">02 Mar 2026</span>
+                            </li>
+                            <li class="flex justify-between bg-rose-50 p-2 rounded -mx-2">
+                                <span class="text-rose-600 font-bold">⚠️ 學校宿舍搬離日</span>
+                                <span class="font-bold text-rose-600">26 Apr 2026</span>
+                            </li>
+                            <li class="flex justify-between">
+                                <span class="text-slate-500">課程結束 (End)</span>
+                                <span class="font-bold text-slate-800">21 Aug 2026</span>
+                            </li>
+                            <li class="flex justify-between">
+                                <span class="text-slate-500">簽證預計效期</span>
+                                <span class="font-bold text-slate-800">~ 18 Oct 2026</span>
+                            </li>
+                        </ul>
+                        <div class="mt-6 p-3 bg-slate-100 rounded text-xs text-slate-600">
+                            *簽證實際結束日期以入境時移民官蓋章或 IRP 卡上日期為準，通常為開學日+8個月。
+                        </div>
+                    </div>
+
+                    <!-- Timeline Visualization -->
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-slate-100 col-span-1 lg:col-span-2">
+                        <h3 class="text-lg font-bold text-slate-800 mb-2">時間軸視圖：住宿缺口預警</h3>
+                        <p class="text-sm text-slate-500 mb-4">這張圖非常重要。黃色區塊是妳目前有的住宿，綠色是上課時間。可以看出 <strong class="text-rose-500">4月底之後</strong> 妳必須自己找到住處才能繼續完成課程。</p>
+                        <div class="chart-container">
+                            <canvas id="timelineChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Status Cards -->
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                    <div class="bg-white p-4 rounded border-l-4 border-emerald-500 shadow-sm">
+                        <div class="text-xs text-slate-500">學費狀態</div>
+                        <div class="font-bold text-emerald-700">已全額付清 ✅</div>
+                        <div class="text-xs text-slate-400 mt-1">包含保險與考試</div>
+                    </div>
+                    <div class="bg-white p-4 rounded border-l-4 border-emerald-500 shadow-sm">
+                        <div class="text-xs text-slate-500">接機服務</div>
+                        <div class="font-bold text-emerald-700">已安排 ✅</div>
+                        <div class="text-xs text-slate-400 mt-1">Taxi Transfer</div>
+                    </div>
+                    <div class="bg-white p-4 rounded border-l-4 border-amber-500 shadow-sm">
+                        <div class="text-xs text-slate-500">住宿狀態</div>
+                        <div class="font-bold text-amber-600">部分安排 (8週)</div>
+                        <div class="text-xs text-slate-400 mt-1">剩餘需自理</div>
+                    </div>
+                    <div class="bg-white p-4 rounded border-l-4 border-slate-300 shadow-sm">
+                        <div class="text-xs text-slate-500">每週課時</div>
+                        <div class="font-bold text-slate-700">20 小時</div>
+                        <div class="text-xs text-slate-400 mt-1">Mon-Fri Morning</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TAB 2: PREP & PACKING -->
+            <div id="view-prep" class="hidden space-y-6">
+                <!-- Documents Section -->
+                <div class="detail-box">
+                    <h3 class="text-xl font-bold text-slate-800 mb-4">📁 入境海關必備文件包</h3>
+                    <p class="text-sm text-slate-600 mb-4">
+                        愛爾蘭海關非常嚴格。請將以下所有文件列印出來，放在隨身包包（不要託運），過海關時整疊交給移民官。
+                    </p>
+                    <div class="space-y-2" id="doc-checklist">
+                        <!-- JS populated -->
+                    </div>
+                    <div class="mt-4 p-3 bg-rose-50 text-rose-800 text-sm rounded border border-rose-100">
+                        <strong>Q: 移民官會問什麼？</strong><br>
+                        A: 通常會問：「妳來做什麼？(Study English)」、「住哪裡？(School Accommodation)」、「待多久？(8 months)」。請誠實回答並出示學校入學信 (Enrollment Letter) 即可。
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <!-- Weather & Clothes -->
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-slate-100">
+                        <h3 class="text-lg font-bold mb-2">🧥 穿衣攻略 (Cork Weather)</h3>
+                        <p class="text-sm text-slate-500 mb-4">
+                            Cork 一天內可能有四季。不要帶太多厚重毛衣，<strong>「洋蔥式穿搭」</strong>最重要。
+                        </p>
+                        <div class="chart-container h-48 mb-4">
+                            <canvas id="weatherChart"></canvas>
+                        </div>
+                        <ul class="text-sm space-y-3 text-slate-700">
+                            <li><strong>防風防水外套：</strong> 最重要！愛爾蘭雨傘很難用（風太大）。</li>
+                            <li><strong>好走的鞋：</strong> Cork 是山城，很多坡路，且學校常有步行活動。</li>
+                            <li><strong>發熱衣/內搭褲：</strong> 3月還是很冷 (約 5-10°C)，室內有暖氣但室外冷。</li>
+                        </ul>
+                    </div>
+
+                    <!-- Tech & Misc -->
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-slate-100">
+                        <h3 class="text-lg font-bold mb-4">🔌 電器與雜物建議</h3>
+                        <ul class="space-y-4 text-sm text-slate-700">
+                            <li class="flex items-start">
+                                <span class="bg-slate-100 p-1 rounded mr-2 text-lg">🔌</span>
+                                <div>
+                                    <strong>轉接頭與延長線</strong>
+                                    <p class="text-slate-500">愛爾蘭是 <span class="font-bold">G型插座 (三扁孔)</span>。建議帶一條台灣延長線 + 一個 G型轉接頭。</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="bg-slate-100 p-1 rounded mr-2 text-lg">📱</span>
+                                <div>
+                                    <strong>SIM 卡 (網路)</strong>
+                                    <p class="text-slate-500">出發前可買幾天漫遊。抵達後去市區辦 Vodafone (訊號好) 或 Three (流量多)。</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="bg-slate-100 p-1 rounded mr-2 text-lg">💊</span>
+                                <div>
+                                    <strong>個人常備藥</strong>
+                                    <p class="text-slate-500">感冒藥、止痛藥、過敏藥、腸胃藥。愛爾蘭看醫生非常貴 (€50-60/次)。</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TAB 3: ARRIVAL & HOUSING -->
+            <div id="view-arrival" class="hidden space-y-6">
+                
+                <!-- Accommodation Details -->
+                <div class="bg-white rounded-lg shadow-sm border border-slate-200 overflow-hidden">
+                    <div class="bg-slate-800 text-white p-4 flex justify-between items-center">
+                        <h3 class="text-lg font-bold"><i class="fas fa-bed mr-2"></i> 住宿詳情 (01 Mar - 26 Apr)</h3>
+                        <span class="bg-amber-500 text-xs text-white px-2 py-1 rounded">8 Weeks Only</span>
+                    </div>
+                    <div class="p-6">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                            <div>
+                                <h4 class="font-bold text-slate-800 mb-2">Residential Single Room (Ensuite)</h4>
+                                <p class="text-sm text-slate-600 mb-2">
+                                    妳預訂的是 "Single Room with Private Bathroom"。這代表妳有自己的臥室與衛浴，但客廳與廚房需與其他 CEC 學生共用。
+                                </p>
+                                <ul class="text-sm space-y-2 mt-3 text-slate-700">
+                                    <li><i class="fas fa-check text-emerald-500 w-5"></i> 包含床單 (Bed Linen)</li>
+                                    <li><i class="fas fa-check text-emerald-500 w-5"></i> 包含 Wi-Fi & TV</li>
+                                    <li><i class="fas fa-check text-emerald-500 w-5"></i> 包含廚房鍋具 (Utensils)</li>
+                                    <li><i class="fas fa-times text-rose-500 w-5"></i> <strong class="text-rose-600">不含毛巾 (Towels)</strong> - 請自備</li>
+                                    <li><i class="fas fa-times text-rose-500 w-5"></i> <strong class="text-rose-600">不含盥洗用品/衛生紙</strong> - 抵達當天需購買</li>
+                                </ul>
+                            </div>
+                            <div class="bg-slate-50 p-4 rounded border border-slate-200">
+                                <h4 class="font-bold text-slate-800 mb-2">📍 地點與交通</h4>
+                                <p class="text-sm text-slate-600 mb-3">
+                                    CEC 的宿舍通常位於 <strong>Cork City Centre</strong>，距離學校步行約 15-20 分鐘內。
+                                    <br>
+                                    <span class="text-xs text-slate-400">(確切地址會在出發前 2 週由學校發送，常見地點如 Lee Point 或 Ash Street)</span>
+                                </p>
+                                <a href="https://www.google.com/maps/dir/Cork+City,+Ireland/Cork+English+College,+Saint+Patrick's+Bridge,+Victorian+Quarter,+Cork,+Ireland" target="_blank" class="block w-full bg-emerald-600 hover:bg-emerald-700 text-white text-center py-2 rounded transition text-sm">
+                                    <i class="fas fa-map-marked-alt mr-2"></i> 查看學校與市中心地圖
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Conceptual Map / Living Functions -->
+                        <div class="border-t pt-6">
+                            <h4 class="font-bold text-slate-800 mb-4">🛒 宿舍周遭生活機能建議 (City Centre)</h4>
+                            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
+                                <div class="bg-blue-50 p-3 rounded">
+                                    <strong class="text-blue-800 block mb-1">採買食物 (Groceries)</strong>
+                                    <ul class="list-disc list-inside text-slate-600">
+                                        <li><strong>Tesco (Paul St):</strong> 商品齊全，市中心最大。</li>
+                                        <li><strong>Lidl (Cornmarket St):</strong> 價格最便宜，省錢首選。</li>
+                                        <li><strong>English Market:</strong> 新鮮肉類/蔬果/體驗當地文化。</li>
+                                    </ul>
+                                </div>
+                                <div class="bg-purple-50 p-3 rounded">
+                                    <strong class="text-purple-800 block mb-1">生活用品 (Essentials)</strong>
+                                    <ul class="list-disc list-inside text-slate-600">
+                                        <li><strong>Penneys (Patrick St):</strong> 買棉被、枕頭套、毛巾、便宜衣物必去 (就是 Primark)。</li>
+                                        <li><strong>Boots:</strong> 藥妝、洗髮精、護膚品。</li>
+                                    </ul>
+                                </div>
+                                <div class="bg-amber-50 p-3 rounded">
+                                    <strong class="text-amber-800 block mb-1">重要地標 (Landmarks)</strong>
+                                    <ul class="list-disc list-inside text-slate-600">
+                                        <li><strong>St. Patrick's Bridge:</strong> 學校就在橋頭。</li>
+                                        <li><strong>St. Patrick's Street:</strong> 主要購物大街。</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Arrival Steps -->
+                <div class="bg-white p-6 rounded-lg shadow-sm border border-slate-100 mt-6">
+                    <h3 class="text-lg font-bold text-slate-800 mb-4">🚕 抵達當日流程 (01 Mar 2026)</h3>
+                    <ol class="relative border-l border-emerald-200 ml-3 space-y-6">
+                        <li class="mb-2 ml-6">
+                            <span class="absolute flex items-center justify-center w-6 h-6 bg-emerald-100 rounded-full -left-3 ring-8 ring-white">
+                                1
+                            </span>
+                            <h4 class="font-medium leading-tight text-slate-900">抵達 Cork 機場 (ORK)</h4>
+                            <p class="text-sm text-slate-600">過移民局 (出示學校信)，領行李。</p>
+                        </li>
+                        <li class="mb-2 ml-6">
+                            <span class="absolute flex items-center justify-center w-6 h-6 bg-emerald-100 rounded-full -left-3 ring-8 ring-white">
+                                2
+                            </span>
+                            <h4 class="font-medium leading-tight text-slate-900">尋找接機司機</h4>
+                            <p class="text-sm text-slate-600">
+                                在入境大廳尋找舉著 "CEC" 或妳名字的牌子。找不到請打緊急電話：<strong>+353 87 9102516</strong>。
+                            </p>
+                        </li>
+                        <li class="mb-2 ml-6">
+                            <span class="absolute flex items-center justify-center w-6 h-6 bg-emerald-100 rounded-full -left-3 ring-8 ring-white">
+                                3
+                            </span>
+                            <h4 class="font-medium leading-tight text-slate-900">入住 (Check-in) & 採買</h4>
+                            <p class="text-sm text-slate-600">
+                                司機載妳到宿舍後，領取鑰匙。放下行李後，建議立刻去附近的超市買水、衛生紙和第一餐的食物。
+                            </p>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+
+            <!-- TAB 4: COURSE & VISA -->
+            <div id="view-visa" class="hidden space-y-6">
+                <!-- Course Details -->
+                <div class="bg-white p-6 rounded-lg shadow-sm border border-slate-100">
+                    <div class="flex justify-between items-start mb-4">
+                        <div>
+                            <h3 class="text-xl font-bold text-slate-800">🎓 Morning Study & Work Programme</h3>
+                            <p class="text-sm text-emerald-600 font-medium">20 Hours per week | 25 Weeks</p>
+                        </div>
+                        <div class="bg-emerald-100 text-emerald-800 px-3 py-1 rounded text-xs font-bold">
+                            開課日: 02 Mar 2026
+                        </div>
+                    </div>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div>
+                            <h4 class="font-bold text-sm text-slate-700 mb-2 border-b pb-1">上課時間表 (Timetable)</h4>
+                            <div class="space-y-2 text-sm text-slate-600">
+                                <div class="flex justify-between">
+                                    <span>First Day (Orientation):</span>
+                                    <span class="font-bold">08:30 AM</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span>Regular Classes:</span>
+                                    <span class="font-bold">09:00 - 13:20 (Approx)</span>
+                                </div>
+                                <p class="text-xs text-slate-400 mt-1 italic">
+                                    *標準課表通常包含中間 20 分鐘休息時間 (11:00-11:20)。
+                                </p>
+                            </div>
+
+                            <h4 class="font-bold text-sm text-slate-700 mt-6 mb-2 border-b pb-1">課程重點 (Syllabus)</h4>
+                            <ul class="list-disc list-inside text-sm text-slate-600 space-y-1">
+                                <li><strong>General English:</strong> 聽說讀寫全方位提升。</li>
+                                <li><strong>Exam Prep:</strong> 針對 TIE 或 IELTS 考試準備 (必修)。</li>
+                                <li><strong>Job Club:</strong> 學校提供免費輔導，協助修改 CV、模擬面試與找工作技巧。</li>
+                            </ul>
+                        </div>
+                        <div class="bg-slate-50 p-4 rounded border border-slate-200">
+                            <h4 class="font-bold text-sm text-slate-700 mb-2">關於 25+8 簽證規則</h4>
+                            <ul class="space-y-3 text-sm text-slate-600">
+                                <li class="flex items-start">
+                                    <i class="fas fa-briefcase mt-1 mr-2 text-emerald-600"></i>
+                                    <div>
+                                        <strong>打工權限:</strong> 上課期間每週 20 小時。<br>假期 (6-9月 & 12/15-1/15) 可達 40 小時。
+                                    </div>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-exclamation-circle mt-1 mr-2 text-rose-500"></i>
+                                    <div>
+                                        <strong>出席率 (Attendance):</strong> 必須保持 <strong>85% 以上</strong>。這是續簽或保住簽證的關鍵。生病請假需有醫生證明。
+                                    </div>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-pen-alt mt-1 mr-2 text-blue-500"></i>
+                                    <div>
+                                        <strong>期末考 (Exam):</strong> 課程結束時必須參加外部考試 (TIE/IELTS)。這也是移民局規定。
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- IRP Guide -->
+                <div class="bg-white p-6 rounded-lg shadow-sm border border-slate-100">
+                    <h3 class="text-lg font-bold mb-4">🛂 IRP 辦理流程 (Cork)</h3>
+                    <p class="text-sm text-slate-600 mb-4">妳必須在抵達後 90 天內完成註冊。</p>
+                    <ol class="list-decimal list-inside text-sm space-y-2 text-slate-700">
+                        <li><strong>向學校申請信件：</strong> 開學後去櫃檯申請 "Immigration Letter" 和 "Bank Letter"。</li>
+                        <li><strong>預約 Garda：</strong> Cork 移民局位於 Anglesea Street。開學當天請務必詢問櫃檯最新的預約方式 (Email 或現場)。</li>
+                        <li><strong>準備文件：</strong> 護照、學校信、保險單、財力證明 (€4500+)、€300 刷卡。</li>
+                    </ol>
+                </div>
+            </div>
+
+            <!-- TAB 5: LIFE & RENTING -->
+            <div id="view-life" class="hidden space-y-6">
+                
+                <!-- Renting Guide -->
+                <div class="bg-white p-6 rounded-lg shadow-sm border border-slate-100">
+                    <h3 class="text-lg font-bold mb-4 text-rose-600">🏠 租屋生存指南 (必讀)</h3>
+                    <p class="text-sm text-slate-600 mb-4">
+                        Cork 租房市場供不應求。妳只有 8 週的緩衝期。建議 <strong class="text-rose-600">抵達第一週</strong> 就開始看房。
+                    </p>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="bg-slate-50 p-4 rounded">
+                            <h4 class="font-bold text-sm text-slate-800">1. 去哪裡找？</h4>
+                            <ul class="list-disc list-inside text-sm text-slate-600 mt-1">
+                                <li><strong>Facebook Groups:</strong> 搜尋 "Rent in Cork"。</li>
+                                <li><strong>Daft.ie:</strong> 愛爾蘭最大網站。</li>
+                                <li><strong>口碑:</strong> 告訴同學妳在找房。</li>
+                            </ul>
+                        </div>
+
+                        <div class="bg-slate-50 p-4 rounded">
+                            <h4 class="font-bold text-sm text-slate-800">2. 防詐騙三不</h4>
+                            <ul class="list-disc list-inside text-sm text-slate-600 mt-1">
+                                <li><strong>不匯款：</strong> 沒拿到鑰匙前不付錢。</li>
+                                <li><strong>不信完美：</strong> 價格過低通常有詐。</li>
+                                <li><strong>不單獨：</strong> 盡量找人陪同看房。</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Money & Work -->
+                <div class="bg-white p-6 rounded-lg shadow-sm border border-slate-100">
+                    <h3 class="text-lg font-bold mb-3">💼 找工作與辦事 (PPSN)</h3>
+                    <div class="space-y-3 text-sm text-slate-600">
+                        <p>要在愛爾蘭合法領薪水，需要 <strong>PPSN (稅號)</strong>。但 PPSN 通常需要有 "Job Offer" 才能申請。</p>
+                        <ul class="list-decimal list-inside">
+                            <li><strong>印履歷 (CV):</strong> 利用學校 Job Club 幫妳修 CV。</li>
+                            <li><strong>掃街 (Walk-in):</strong> Cork 很多餐廳、咖啡廳。直接進去問 "Are you hiring?" 是最快的方法。</li>
+                            <li><strong>拿到 Offer 後:</strong> 雇主會給妳 Job Offer Letter，拿這張信去申請 PPSN。</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div> <!-- End Content Area -->
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-800 text-slate-300 py-8 mt-12 border-t-4 border-emerald-500">
+        <div class="max-w-6xl mx-auto px-4 text-center">
+            <h3 class="text-white font-bold mb-4 text-lg">🆘 緊急聯絡小卡 (截圖保存)</h3>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-sm mb-6 max-w-2xl mx-auto">
+                <div class="bg-slate-700 p-3 rounded">
+                    <div class="text-slate-400 text-xs">CEC 學校緊急電話</div>
+                    <a href="tel:+353879102516" class="text-white font-mono text-lg font-bold hover:text-emerald-400">+353 87 9102516</a>
+                </div>
+                <div class="bg-slate-700 p-3 rounded">
+                    <div class="text-slate-400 text-xs">愛爾蘭報警/救護車</div>
+                    <div class="text-white font-mono text-lg font-bold">112 or 999</div>
+                </div>
+                <div class="bg-slate-700 p-3 rounded">
+                    <div class="text-slate-400 text-xs">外交部駐愛爾蘭代表處</div>
+                    <div class="text-white font-mono text-lg font-bold">+353 87 2825207</div>
+                </div>
+            </div>
+            <p class="text-xs text-slate-500">
+                本網頁內容整理自 2026/01/02 相關文件與官網資訊。政策與規定可能變動，請抵達後以學校最新公告為準。
+            </p>
+        </div>
+    </footer>
+
+    <!-- JavaScript Logic -->
+    <script>
+        // Data derived from PDF extraction
+        const studentData = {
+            name: "Ms Zhiqi Lei",
+            housingEnd: "2026-04-26"
+        };
+
+        // Checklist Data (Detailed)
+        const checklistItems = [
+            { id: 'c1', text: "護照 (Passport)", desc: "效期需涵蓋整個留學期間，建議印一份影本分開存放。", required: true },
+            { id: 'c2', text: "CEC 入學許可信 (Enrollment Letter)", desc: "過海關最重要文件，證明妳是學生。", required: true },
+            { id: 'c3', text: "繳費確認信 (Payment Confirmation)", desc: "證明學費已繳清。", required: true },
+            { id: 'c4', text: "保險單 (Insurance Policy)", desc: "學校信中已提及投保，請向顧問索取保單電子檔並列印。", required: true },
+            { id: 'c5', text: "住宿證明 (Accommodation Detail)", desc: "海關會問妳住哪，出示學校宿舍確認信。", required: true },
+            { id: 'c6', text: "財力證明 (Bank Statement)", desc: "建議隨身攜帶英文版存款證明影本，以防抽查。", required: false },
+            { id: 'c7', text: "回程機票證明", desc: "雖然簽證是一年，但有時海關會看妳是否有離境意圖。", required: false }
+        ];
+
+        // --- Core Functions ---
+
+        function initApp() {
+            renderChecklist();
+            initCharts();
+            // Show overview by default
+            switchTab('overview');
+        }
+
+        function switchTab(tabId) {
+            // Hide all views
+            const views = ['overview', 'prep', 'arrival', 'visa', 'life'];
+            views.forEach(v => {
+                document.getElementById(`view-${v}`).classList.add('hidden');
+                
+                const tabBtn = document.getElementById(`tab-${v}`);
+                tabBtn.classList.remove('tab-active');
+                tabBtn.classList.add('tab-inactive');
+            });
+
+            // Show selected view
+            document.getElementById(`view-${tabId}`).classList.remove('hidden');
+            
+            const activeTab = document.getElementById(`tab-${tabId}`);
+            activeTab.classList.remove('tab-inactive');
+            activeTab.classList.add('tab-active');
+            
+            // Re-render charts logic
+            if (tabId === 'overview') updateTimelineChart();
+            if (tabId === 'prep') updateWeatherChart();
+        }
+
+        function renderChecklist() {
+            const container = document.getElementById('doc-checklist');
+            container.innerHTML = checklistItems.map(item => `
+                <div class="flex items-start p-3 bg-slate-50 rounded border border-slate-200 hover:bg-white transition cursor-pointer group" onclick="toggleCheck('${item.id}')">
+                    <div class="flex-shrink-0 h-6 w-6 border-2 border-emerald-500 rounded flex items-center justify-center mr-3 mt-0.5 ${item.checked ? 'bg-emerald-500' : 'bg-white'}">
+                        ${item.checked ? '<span class="text-white text-sm font-bold">✓</span>' : ''}
+                    </div>
+                    <div class="flex-1">
+                        <div class="flex items-center">
+                            <span class="font-bold text-slate-800 ${item.checked ? 'line-through text-slate-400' : ''}">${item.text}</span>
+                            ${item.required ? '<span class="ml-2 text-xs bg-red-100 text-red-600 px-1.5 py-0.5 rounded">必備</span>' : ''}
+                        </div>
+                        <p class="text-xs text-slate-500 mt-1 ${item.checked ? 'text-slate-300' : ''}">${item.desc}</p>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function toggleCheck(id) {
+            const item = checklistItems.find(i => i.id === id);
+            if (item) {
+                item.checked = !item.checked;
+                renderChecklist();
+            }
+        }
+
+        // --- Charts Initialization ---
+        let timelineChartInstance = null;
+        let weatherChartInstance = null;
+
+        function initCharts() {
+            // 1. Timeline Chart
+            const ctxTimeline = document.getElementById('timelineChart').getContext('2d');
+            
+            timelineChartInstance = new Chart(ctxTimeline, {
+                type: 'bar',
+                data: {
+                    labels: ['學校宿舍 (School Housing)', '自行租屋 (需尋找)', '英語課程 (Course)', '簽證效期 (Visa)'],
+                    datasets: [{
+                        label: 'Duration',
+                        data: [
+                            [0, 8],    // Housing Provided
+                            [8, 25],   // Gap needing housing
+                            [0, 25],   // Course
+                            [0, 33]    // Visa
+                        ],
+                        backgroundColor: [
+                            'rgba(245, 158, 11, 0.8)', // Amber (School Housing)
+                            'rgba(244, 63, 94, 0.8)',  // Rose (Gap - Urgent)
+                            'rgba(5, 150, 105, 0.8)',  // Emerald (Course)
+                            'rgba(71, 85, 105, 0.2)'   // Slate (Visa)
+                        ],
+                        barPercentage: 0.5,
+                        borderRadius: 4
+                    }]
+                },
+                options: {
+                    indexAxis: 'y',
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: { display: false },
+                        tooltip: {
+                            callbacks: {
+                                label: function(context) {
+                                    if(context.dataIndex === 1) return "⚠️ 這段期間需自行租屋！";
+                                    return `持續週數: ${context.raw[1] - context.raw[0]} 週`;
+                                }
+                            }
+                        }
+                    },
+                    scales: {
+                        x: {
+                            title: { display: true, text: '週數 (從 3月1日開始計算)' },
+                            min: 0,
+                            max: 35,
+                            grid: { color: '#f1f5f9' }
+                        }
+                    }
+                }
+            });
+
+            // 2. Weather Chart (Cork)
+            const ctxWeather = document.getElementById('weatherChart').getContext('2d');
+            weatherChartInstance = new Chart(ctxWeather, {
+                type: 'line',
+                data: {
+                    labels: ['3月', '4月', '5月', '6月', '7月', '8月', '9月', '10月'],
+                    datasets: [
+                        {
+                            label: '平均溫度 (°C)',
+                            data: [9, 11, 13, 16, 18, 18, 16, 13],
+                            borderColor: '#f59e0b',
+                            backgroundColor: 'rgba(245, 158, 11, 0.1)',
+                            fill: true,
+                            tension: 0.4,
+                            yAxisID: 'y'
+                        },
+                        {
+                            label: '平均降雨天數',
+                            data: [15, 11, 11, 10, 10, 11, 11, 15],
+                            borderColor: '#3b82f6',
+                            borderDash: [5, 5],
+                            tension: 0.1,
+                            yAxisID: 'y1'
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: { legend: { position: 'top' } },
+                    scales: {
+                        y: { title: { display: true, text: '溫度 °C' }, min: 0, max: 25 },
+                        y1: { title: { display: true, text: '降雨天數' }, position: 'right', min: 0, max: 30, grid: { drawOnChartArea: false } }
+                    }
+                }
+            });
+        }
+
+        function updateTimelineChart() { if(timelineChartInstance) timelineChartInstance.update(); }
+        function updateWeatherChart() { if(weatherChartInstance) weatherChartInstance.update(); }
+
+        document.addEventListener('DOMContentLoaded', initApp);
+
+    </script>
+</body>
+</html>
